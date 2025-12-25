@@ -1,0 +1,2 @@
+exec sp_rename 'Orders_ReviewStatusRecord.order_id','review_status_id' 
+ALTER TABLE [dbo].[Orders_ReviewStatusRecord] ADD FOREIGN KEY ([review_status_id]) REFERENCES [dbo].[Orders_ReviewStatus] ([id]) ON DELETE SET NULL ON UPDATE CASCADE 

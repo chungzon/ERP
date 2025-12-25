@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.ManageProductInfo.ManageProductOnShelf.ManageProductOnShelf_Controller">
+   <top>
+      <HBox alignment="CENTER" prefHeight="207.0" prefWidth="1900.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea editable="false" prefHeight="200.0" prefWidth="600.0" text="&#10;" wrapText="true">
+               <font>
+                  <Font size="18.0" />
+               </font></TextArea>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <TabPane prefHeight="412.0" prefWidth="1900.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="WaitingOnShelf_Tab" onSelectionChanged="#WaitingOnShelfTabOnSelectionChanged" style="-fx-font-size: 18;" text="待上架">
+               <content>
+                  <GridPane prefHeight="191.0" prefWidth="1900.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="250.0" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Button fx:id="clearWaitingOnShelf_Button" mnemonicParsing="false" onMouseClicked="#clearWaitingOnShelfMouseClicked" prefWidth="180.0" text="清空待上架商品">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RefreshLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="WebOnShelf_Button" disable="true" mnemonicParsing="false" prefWidth="120.0" text="網站上架">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UploadLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="YahooOnShelf_Button" mnemonicParsing="false" prefWidth="120.0" text="上架">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/YahooButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="RutenOnShelf_Button" mnemonicParsing="false" prefWidth="120.0" text="上架">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RutenButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="ShopeeOnShelf_Button" mnemonicParsing="false" prefWidth="120.0" text="上架">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/ShopeeButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onMouseClicked="#ProductDefaultSettingMouseClicked" prefWidth="140.0" text="商品設定">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/SettingLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="296.0" prefWidth="1880.0" spacing="20.0" GridPane.rowIndex="1">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </content>
+          </Tab>
+          <Tab fx:id="AlreadyOnShelf_Tab" onSelectionChanged="#AlreadyOnShelfTabOnSelectionChanged" style="-fx-font-size: 18;" text="已上架">
+               <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="250.0" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="賣場">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="AlreadyOnShelf_YahooButton" mnemonicParsing="false" onMouseClicked="#YahooMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#YahooMouseClicked" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/YahooButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="AlreadyOnShelf_RutenButton" mnemonicParsing="false" onMouseClicked="#RutenMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RutenButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="AlreadyOnShelf_ShopeeButton" mnemonicParsing="false" onMouseClicked="#ShopeeMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/ShopeeButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0">
+                                 <children>
+                                    <Label text="店內碼 / 國際碼 / 商品碼 / 品名">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="SearchProductTextField" onKeyPressed="#SearchProductTextKeyPressed" prefWidth="400.0">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </TextField>
+                                    <Button fx:id="SearchProduct_Button" mnemonicParsing="false" onMouseClicked="#SearchProductOnShelfMouseClicked" prefWidth="120.0" text="搜尋">
+                                       <graphic>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Image/SearchLogo.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="1">
+                           <children>
+                              <CheckBox fx:id="AlreadyOnShelf_SelectAll_CheckBox" mnemonicParsing="false" onAction="#AlreadyOnShelf_SelectAllOnAction" text="全選">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </CheckBox>
+                              <Button fx:id="WebOffShelf_Button" mnemonicParsing="false" prefWidth="120.0" text="網頁下架">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/DeleteLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="YahooOffShelf_Button" mnemonicParsing="false" prefWidth="120.0" text="下架">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/YahooButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="RutenOffShelf_Button" mnemonicParsing="false" prefWidth="120.0" text="下架">
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RutenButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button disable="true" mnemonicParsing="false" prefWidth="120.0" text="下架">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/DeleteLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="refreshVisitors_Button" mnemonicParsing="false" prefWidth="160.0" text="更新瀏覽人數">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RefreshLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="AlreadyOffShelf_Tab" onSelectionChanged="#AlreadyOffShelfTabOnSelectionChanged" style="-fx-font-size: 18;" text="已下架">
+               <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="250.0" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="賣場">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="AlreadyOffShelf_YahooButton" mnemonicParsing="false" onMouseClicked="#YahooMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/YahooButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="AlreadyOffShelf_RutenButton" mnemonicParsing="false" onMouseClicked="#RutenMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RutenButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="AlreadyOffShelf_ShopeeButton" mnemonicParsing="false" onMouseClicked="#ShopeeMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/ShopeeButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="AlreadyOffShelf_UnSell_Button" disable="true" mnemonicParsing="false" onMouseClicked="#UnSellMouseClicked" text="未售出">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="AlreadyOffShelf_AlreadySell_Button" disable="true" mnemonicParsing="false" onMouseClicked="#AlreadySellMouseClicked" text="已售出">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="1">
+                           <children>
+                              <CheckBox fx:id="AlreadyOffShelf_SelectAll_CheckBox" mnemonicParsing="false" onAction="#AlreadyOffShelf_SelectAllOnAction" text="全選">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </CheckBox>
+                              <Button fx:id="ReOnShelf_Button" mnemonicParsing="false" prefWidth="120.0" text="重新上架">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UploadLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="refreshData_Button" mnemonicParsing="false" prefWidth="160.0" text="更新資料列表">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RefreshLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="OnlineWaitingOffShelf_Tab" onSelectionChanged="#OnlineWaitingOffShelfTabOnSelectionChanged" style="-fx-font-size: 18;" text="線上，待下架">
+               <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="250.0" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="賣場">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="OnlineWaitingOffShelf_YahooButton" mnemonicParsing="false" onMouseClicked="#YahooMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/YahooButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="OnlineWaitingOffShelf_RutenButton" mnemonicParsing="false" onMouseClicked="#RutenMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RutenButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="OnlineWaitingOffShelf_ShopeeButton" mnemonicParsing="false" onMouseClicked="#ShopeeMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/ShopeeButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="1">
+                           <children>
+                              <CheckBox fx:id="OnlineWaitingOffShelf_SelectAll_CheckBox" mnemonicParsing="false" onAction="#OnlineWaitingOffShelf_SelectAllOnAction" text="全選">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </CheckBox>
+                              <Button fx:id="deleteProduct_Button" mnemonicParsing="false" prefWidth="120.0" text="刪除商品">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/DeleteLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="OnlineWaitingUpdate_Tab" onSelectionChanged="#OnlineWaitingUpdateTabOnSelectionChanged" style="-fx-font-size: 18;" text="線上，待修改">
+               <content>
+                  <GridPane prefHeight="412.0" prefWidth="1900.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="250.0" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="賣場">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="OnlineWaitingUpdate_YahooButton" mnemonicParsing="false" onMouseClicked="#YahooMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/YahooButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="OnlineWaitingUpdate_RutenButton" mnemonicParsing="false" onMouseClicked="#RutenMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RutenButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="OnlineWaitingUpdate_ShopeeButton" mnemonicParsing="false" onMouseClicked="#ShopeeMouseClicked">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/ShopeeButton.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <CheckBox fx:id="OnlineWaitingUpdate_SelectAll_CheckBox" mnemonicParsing="false" onAction="#OnlineWaitingUpdate_SelectAllOnAction" text="全選">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </GridPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <GridPane prefHeight="590.0" prefWidth="1900.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TableView fx:id="TableView" prefHeight="100.0" prefWidth="1900.0">
+              <columns>
+                <TableColumn fx:id="WebCheckBoxColumn" prefWidth="70.0" resizable="false">
+                     <graphic>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <CheckBox fx:id="WaitingOnShelf_WebSelectAll_CheckBox" mnemonicParsing="false" onAction="#WaitingOnShelf_WebSelectAllOnAction">
+                                 <font>
+                                    <Font name="System Bold Italic" size="16.0" />
+                                 </font>
+                              </CheckBox>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/Web.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </TableColumn>
+                <TableColumn fx:id="YahooCheckBoxColumn" prefWidth="70.0" resizable="false">
+                     <graphic>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <CheckBox fx:id="WaitingOnShelf_YahooSelectAll_CheckBox" mnemonicParsing="false" onAction="#WaitingOnShelf_YahooSelectAllOnAction">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </CheckBox>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/YahooButton.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="RutenCheckBoxColumn" prefWidth="70.0" resizable="false">
+                     <graphic>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <CheckBox fx:id="WaitingOnShelf_RutenSelectAll_CheckBox" mnemonicParsing="false" onAction="#WaitingOnShelf_RutenSelectAllOnAction">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </CheckBox>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/RutenButton.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="ShopeeCheckBoxColumn" prefWidth="70.0" resizable="false">
+                     <graphic>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <CheckBox fx:id="WaitingOnShelf_ShopeeSelectAll_CheckBox" mnemonicParsing="false" onAction="#WaitingOnShelf_ShopeeSelectAllOnAction">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </CheckBox>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/ShopeeButton.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="ISBNColumn" prefWidth="130.0" resizable="false" text="店內碼" />
+                  <TableColumn fx:id="InternationalCodeColumn" prefWidth="130.0" resizable="false" text="國際碼" />
+                  <TableColumn fx:id="FirmCodeColumn" prefWidth="130.0" resizable="false" text="商品碼" />
+                  <TableColumn fx:id="ProductNameColumn" prefWidth="550.0" resizable="false" text="品名" />
+                  <TableColumn fx:id="UnitColumn" prefWidth="50.0" resizable="false" text="單位" />
+                  <TableColumn fx:id="BatchPriceColumn" prefWidth="100.0" resizable="false" text="成本" />
+                  <TableColumn fx:id="SinglePriceColumn" prefWidth="100.0" resizable="false" text="單價" />
+                  <TableColumn fx:id="PricingColumn" prefWidth="100.0" resizable="false" text="定價" />
+                  <TableColumn fx:id="VipPrice1Column" prefWidth="100.0" resizable="false" text="VipPrice1" />
+                  <TableColumn fx:id="VipPrice2Column" prefWidth="100.0" resizable="false" text="VipPrice2" />
+                  <TableColumn fx:id="VipPrice3Column" prefWidth="100.0" resizable="false" text="VipPrice3" />
+                  <TableColumn fx:id="SpecialOfferColumn" prefWidth="100.0" resizable="false" text="特價" />
+                  <TableColumn fx:id="VisitorsColumn" prefWidth="100.0" resizable="false" text="瀏覽人數" />
+                  <TableColumn fx:id="FollowersColumn" prefWidth="100.0" resizable="false" text="追蹤數" />
+                  <TableColumn fx:id="SellingVolumeColumn" prefWidth="100.0" resizable="false" text="售出數量" />
+                  <TableColumn fx:id="BidCodeColumn" prefWidth="140.0" resizable="false" text="賣場商品代碼" />
+              </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </GridPane>
+   </bottom>
+</BorderPane>

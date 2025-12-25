@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.Toolkit.ShowPictureEditor.ShowPictureEditor_Controller">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="75.0" prefWidth="750.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="tooltip_Label">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/Tooltip.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip fx:id="tooltip" style="-fx-base: #AE3522; -fx-text-fill: orange; -fx-font: normal bold 24 Langdon;" />
+               </tooltip>
+            </Label>
+            <Button mnemonicParsing="false" onMouseClicked="#PrinterPictureMouseClicked" prefWidth="120.0" text="列印">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/PrinterLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#DownloadPictureMouseClicked" prefWidth="120.0" text="下載">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/DownloadLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="saveDrawing_Button" disable="true" mnemonicParsing="false" onMouseClicked="#SavePictureMouseClicked" prefWidth="140.0" text="儲存塗鴉">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/UpdateLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="DeletePictureButton" mnemonicParsing="false" onMouseClicked="#DeletePictureMouseClicked" prefWidth="120.0" text="刪除">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/DeleteLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#CloseMouseClicked" prefWidth="120.0" text="關閉">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/Close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <StackPane prefHeight="850.0" prefWidth="1390.0">
+               <children>
+                  <ImageView fx:id="PictureImageView" pickOnBounds="true" preserveRatio="true" />
+                  <Canvas fx:id="PictureCanvas" height="850.0" onMouseDragged="#PictureCanvasMouseDragged" onMousePressed="#PictureCanvasMousePressed" width="1370.0" />
+               </children>
+            </StackPane>
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>

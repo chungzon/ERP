@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.Toolkit.ShowSearchOrderTableViewSetting.ShowSearchOrderTableViewSetting_Controller">
+   <center>
+      <HBox alignment="CENTER" prefHeight="421.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="TableView" onKeyPressed="#TableViewKeyPressed" onKeyReleased="#TableViewKeyReleased" prefHeight="400.0" prefWidth="350.0">
+              <columns>
+                <TableColumn fx:id="showTableColumn" prefWidth="50.0" resizable="false" text="顯示" />
+                  <TableColumn fx:id="ColumnName" prefWidth="140.0" resizable="false" text="欄位名稱" />
+                <TableColumn fx:id="previousMoveColumn" prefWidth="70.0" resizable="false" text="上移" />
+                  <TableColumn fx:id="nextMoveColumn" prefWidth="70.0" resizable="false" text="下移" />
+              </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </HBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="63.0" prefWidth="900.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#SaveMouseClicked" prefWidth="120.0" text="儲存">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/UpdateLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#CloseMouseClicked" prefWidth="120.0" text="關閉">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/Close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <top>
+      <VBox alignment="CENTER" prefHeight="59.0" prefWidth="420.0" spacing="10.0" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <Label text="Shift + Up / Down ： 上 / 下移" textFill="RED">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label text="Enter ： 儲存" textFill="RED">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

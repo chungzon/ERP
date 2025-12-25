@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.SystemSetting.SystemSetting_Controller">
+   <top>
+      <Button mnemonicParsing="false" onMouseClicked="#CloseMouseClicked" prefHeight="20.0" prefWidth="180.0" text="回主選單" BorderPane.alignment="CENTER_LEFT">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Image/Close.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab style="-fx-font-size: 15;" text="商品儲存區設定">
+               <content>
+                  <GridPane alignment="TOP_CENTER" hgap="30.0" prefWidth="500.0" vgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="220.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="615.0" minWidth="10.0" prefWidth="529.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="231.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <padding>
+                        <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="insertProductArea_Button" mnemonicParsing="false" onMouseClicked="#InsertProductAreaMouseClicked" prefHeight="30.0" prefWidth="150.0" text="新增儲存區">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/EstablishLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <Button fx:id="modifyProductArea_Button" disable="true" mnemonicParsing="false" onMouseClicked="#ModifyProductAreaMouseClicked" prefHeight="30.0" prefWidth="150.0" text="修改儲存區">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <children>
+                              <Button fx:id="deleteProductArea_Button" disable="true" mnemonicParsing="false" onMouseClicked="#DeleteProductAreaMouseClicked" prefHeight="30.0" prefWidth="150.0" text="刪除儲存區">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/DeleteLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="ProductBookCase_TableView" onMouseClicked="#ProductBookCaseTableViewMouseClicked" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowSpan="8">
+                          <columns>
+                            <TableColumn fx:id="ProductArea_TableColumn" editable="false" prefWidth="250.0" resizable="false" text="商品儲存區" />
+                            <TableColumn fx:id="ProductFloor_TableColumn" minWidth="0.0" prefWidth="250.0" text="商品儲存層" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+                           <children>
+                              <Button fx:id="insertProductFloor_Button" disable="true" mnemonicParsing="false" onMouseClicked="#InsertProductFloorMouseClicked" prefHeight="30.0" prefWidth="150.0" text="新增儲存層">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/EstablishLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <Button fx:id="modifyProductFloor_Button" disable="true" mnemonicParsing="false" onMouseClicked="#ModifyProductFloorMouseClicked" prefHeight="30.0" prefWidth="150.0" text="修改儲存層">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <Button fx:id="deleteProductFloor_Button" disable="true" mnemonicParsing="false" onMouseClicked="#DeleteProductFloorMouseClicked" prefHeight="30.0" prefWidth="150.0" text="刪除儲存層">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/DeleteLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+          <Tab style="-fx-font-size: 15;" text="預設列表機設定">
+               <content>
+                  <GridPane alignment="CENTER" hgap="10.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="796.0" minWidth="10.0" prefWidth="732.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="410.0" minWidth="10.0" prefWidth="298.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <padding>
+                        <Insets left="20.0" right="20.0" top="50.0" />
+                     </padding>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="700.0" style="-fx-background-color: #B3B3B3;" text="預設列表機設定">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="DefaultPrinter_ComboBox" prefWidth="700.0" style="-fx-font-size: 15;" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" onMouseClicked="#SaveDefaultPrinterMouseClicked" prefHeight="25.0" prefWidth="120.0" text="儲存" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/UpdateLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="700.0" style="-fx-background-color: #B3B3B3;" text="託運單列表機設定" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="ConsignmentPrinter_ComboBox" prefWidth="700.0" style="-fx-font-size: 15;" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" onMouseClicked="#SaveConsignmentPrinterMouseClicked" prefHeight="25.0" prefWidth="120.0" text="儲存" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/UpdateLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="700.0" style="-fx-background-color: #B3B3B3;" text="標籤列表機設定" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="LabelPrinter_ComboBox" prefWidth="700.0" style="-fx-font-size: 15;" GridPane.rowIndex="5" />
+                        <Button mnemonicParsing="false" onMouseClicked="#SaveLabelPrinterMouseClicked" prefHeight="25.0" prefWidth="120.0" text="儲存" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/UpdateLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-font-size: 15;" text="其他設定">
+               <content>
+                  <GridPane alignment="TOP_CENTER" hgap="30.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="208.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.0" minWidth="10.0" prefWidth="294.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.0" minWidth="10.0" prefWidth="157.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="482.0" minWidth="10.0" prefWidth="262.0" />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <padding>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Label text="客戶編號起始字母">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.columnSpan="3">
+                           <children>
+                              <ComboBox fx:id="CustomerIDCharacter_ComboBox" prefWidth="100.0" style="-fx-font-size: 18;" />
+                              <Button mnemonicParsing="false" onMouseClicked="#SaveCustomerIDCharacterMouseClicked" prefWidth="140.0" text="更改設定">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="客戶位數(無英文)" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="CustomerIDLengthText" prefWidth="100.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="CustomerIDLength_Button" mnemonicParsing="false" onMouseClicked="#SaveCustomerIDLengthMouseClicked" prefWidth="140.0" text="更改設定">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="地區客戶位數" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <TextField fx:id="CustomerIDAreaLengthText" prefWidth="100.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="CustomerIDAreaLength_Button" mnemonicParsing="false" onMouseClicked="#SaveCustomerIDAreaLengthMouseClicked" prefWidth="140.0" text="更改設定">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="廠商位數(無英文)" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <TextField fx:id="ManufacturerIDLengthText" prefWidth="100.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="ManufacturerIDLength_Button" mnemonicParsing="false" onMouseClicked="#SaveManufacturerIDLengthMouseClicked" prefWidth="140.0" text="更改設定">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="貨單號長度" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <TextField fx:id="orderNumberLengthText" prefWidth="100.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="orderNumberLength_Button" mnemonicParsing="false" onMouseClicked="#saveOrderNumberLengthMouseClicked" prefWidth="140.0" text="更改設定">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="專案編號預設網址" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="5">
+                           <children>
+                              <TextField fx:id="projectCodeDefaultUrlText" prefHeight="36.0" prefWidth="585.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button mnemonicParsing="false" onMouseClicked="#saveProjectCodeDefaultUrlMouseClicked" prefWidth="140.0" text="更改設定">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="匯出路徑設定" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6">
+                           <children>
+                              <TextField fx:id="outputFilePathText" prefHeight="36.0" prefWidth="585.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <Button mnemonicParsing="false" onMouseClicked="#saveOutputFilePathMouseClicked" prefWidth="140.0" text="更改設定">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="客戶編號對照表" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="CustomerIDCharacter_TableView" prefHeight="200.0" prefWidth="352.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="7" GridPane.rowSpan="6">
+                          <columns>
+                            <TableColumn fx:id="CustomerLocation_TableColumn" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="客戶所在地" />
+                            <TableColumn fx:id="CustomerIDCharacter_TableColumn" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="客戶起始字母" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-font-size: 15;" text="測試資料庫">
+               <content>
+                  <GridPane prefHeight="491.0" prefWidth="200.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="534.0" minWidth="10.0" prefWidth="150.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="930.0" minWidth="10.0" prefWidth="930.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="70.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="56.0" prefHeight="70.0" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="70.0" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="10.0" prefHeight="70.0" />
+                    </rowConstraints>
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Driver">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                           <children>
+                              <TextField fx:id="testDriverText" onKeyReleased="#testDriverKeyReleased" prefWidth="600.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                           <children>
+                              <Label text="Url">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="testUrlText" onKeyReleased="#testUrlKeyReleased" prefWidth="600.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                           <children>
+                              <Label text="User">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <TextField fx:id="testUserText" onKeyReleased="#testUserKeyReleased" prefWidth="200.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                           <children>
+                              <Label text="Password">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <TextField fx:id="testPasswordText" onKeyReleased="#testPasswordKeyReleased" prefWidth="200.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <Button mnemonicParsing="false" onMouseClicked="#ConnectTestMouseClicked" prefWidth="140.0" text="連線測試">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/Web.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-font-size: 15;" text="出納帳戶設定">
+               <content>
+                  <GridPane alignment="TOP_CENTER" hgap="15.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="232.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="874.0" minWidth="10.0" prefWidth="783.0" />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="190.0" minHeight="0.0" prefHeight="44.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="274.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="347.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="394.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="422.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="459.0" minHeight="0.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="491.0" minHeight="10.0" prefHeight="418.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets left="20.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Label text="廠商編號" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.columnSpan="3">
+                           <children>
+                              <TextField fx:id="IAECrawler_ObjectIDText" onKeyReleased="#IAECrawler_ObjectIDKeyReleased" prefWidth="100.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="IAECrawler_ObjectNameText" onKeyReleased="#IAECrawler_ObjectNameKeyReleased" prefWidth="400.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <Label text="出納帳號" underline="true" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="IAECrawler_AccountText" prefWidth="200.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <Label text="出納密碼" underline="true" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <TextField fx:id="IAECrawler_PasswordText" prefWidth="200.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <Label text="發票廠商簡稱 / 全名" underline="true" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label text="報價單匯出 / 範本檔名" underline="true" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                           <children>
+                              <RadioButton fx:id="exportQuotationRadioButton_IAECrawler" mnemonicParsing="false" onAction="#exportQuotationOnAction" text="是">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="ExportQuotationToggleGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="noneExportQuotationRadioButton_IAECrawler" mnemonicParsing="false" onAction="#noneExportQuotationOnAction" selected="true" text="否" toggleGroup="$ExportQuotationToggleGroup">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </RadioButton>
+                              <Button fx:id="templateFormatSetting_Button" disable="true" mnemonicParsing="false" onMouseClicked="#templateFormatSettingMouseClicked" prefWidth="160.0" text="範本格式設定">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/SettingLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label text="所屬學校" underline="true" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <SplitMenuButton fx:id="IAECrawlerBelong_SplitMenuButton" mnemonicParsing="false" onMouseClicked="#IAECrawlerBelongMouseClicked" prefHeight="34.0" prefWidth="255.0" text="設定">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/SettingLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </SplitMenuButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="61.0" prefWidth="997.0" spacing="20.0" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                           <children>
+                              <Button fx:id="IAECrawlerAccount_InsertButton" mnemonicParsing="false" onMouseClicked="#insertPaymentAccountMouseClicked" prefWidth="120.0" text="新增">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/EstablishLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onMouseClicked="#clearPaymentAccountMouseClicked" prefWidth="120.0" text="清空">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RefreshLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="IAECrawlerAccount_ModifyButton" disable="true" mnemonicParsing="false" onMouseClicked="#modifyPaymentAccountMouseClicked" prefWidth="120.0" text="修改">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="IAECrawlerAccount_DeleteButton" disable="true" mnemonicParsing="false" onMouseClicked="#deletePaymentAccountMouseClicked" prefWidth="120.0" text="刪除">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/DeleteLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="IAECrawlerAccount_TableView" onMouseClicked="#IAECrawlerTableViewMouseClicked" prefHeight="200.0" prefWidth="80.0" GridPane.columnSpan="2" GridPane.rowIndex="7">
+                           <columns>
+                              <TableColumn fx:id="IAECrawler_ObjectIDColumn" editable="false" prefWidth="100.0" resizable="false" sortable="false" text="廠商編號" />
+                              <TableColumn fx:id="IAECrawler_ObjectNameColumn" editable="false" prefWidth="250.0" resizable="false" sortable="false" text="廠商名稱" />
+                              <TableColumn fx:id="IAECrawler_AccountColumn" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="出納帳號" />
+                              <TableColumn fx:id="IAECrawler_PasswordColumn" editable="false" prefWidth="120.0" resizable="false" sortable="false" text="出納密碼" />
+                              <TableColumn fx:id="IAECrawler_ExportQuotationColumn" editable="false" prefWidth="200.0" resizable="false" sortable="false" text="報價單匯出簡稱" />
+                              <TableColumn fx:id="IAECrawler_TheSameAsNoneInvoiceColumn" editable="false" prefWidth="130.0" resizable="false" sortable="false" text="同【無發票章】" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <TextField fx:id="IAECrawler_ManufacturerNickNameText" prefWidth="100.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="IAECrawler_ManufacturerAllNameText" prefHeight="36.0" prefWidth="400.0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-font-size: 15;" text="【公司資訊】檔案匯出格式">
+               <content>
+                  <GridPane>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="823.0" minWidth="10.0" prefWidth="53.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="823.0" minWidth="10.0" prefWidth="742.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="423.0" minWidth="10.0" prefWidth="74.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="332.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="625.0" minHeight="10.0" prefHeight="565.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="625.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <TableView fx:id="exportCompanyFormat_TableView" editable="true" prefHeight="608.0" prefWidth="806.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                          <columns>
+                            <TableColumn fx:id="exportCompanyTitleFormat_Column" prefWidth="200.0" resizable="false" sortable="false" text="欄位" />
+                            <TableColumn fx:id="exportCompanyInfoFormat_Column" onEditCommit="#exportCompanyInfoFormatOnEditCommit" prefWidth="530.0" text="資訊" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="739.0" GridPane.columnIndex="1">
+                           <children>
+                              <Button mnemonicParsing="false" onMouseClicked="#saveExportCompanyFormatMouseClicked" prefWidth="120.0" text="儲存">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-font-size: 15;" text="【匯出範本】檔案名稱">
+               <content>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="823.0" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="952.0" minWidth="10.0" prefWidth="830.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="875.0" minWidth="0.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="332.0" minHeight="10.0" prefHeight="81.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="625.0" minHeight="10.0" prefHeight="565.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="625.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <TableView fx:id="exportTemplateName_TableView" editable="true" prefHeight="619.0" prefWidth="706.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <columns>
+                              <TableColumn fx:id="exportTemplateTitleName_Column" prefWidth="220.0" resizable="false" sortable="false" text="範本" />
+                              <TableColumn fx:id="exportTemplateName_Column" onEditCommit="#templateNameOnEditCommit" prefWidth="600.0" text="檔案名稱" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER_LEFT" prefHeight="81.0" prefWidth="739.0" GridPane.columnIndex="1">
+                           <children>
+                              <Button fx:id="saveExportTemplate_Button" mnemonicParsing="false" onMouseClicked="#saveExportTemplateMouseClicked" prefWidth="120.0" text="儲存">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab style="-fx-font-size: 15;" text="貨單攝影機設定(IpCam)">
+               <content>
+                  <GridPane prefWidth="500.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="823.0" minWidth="10.0" prefWidth="84.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="823.0" minWidth="10.0" prefWidth="600.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="423.0" minWidth="10.0" prefWidth="290.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="332.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="332.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="332.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="332.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="625.0" minHeight="10.0" prefHeight="251.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="625.0" minHeight="10.0" prefHeight="306.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label text="預設" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox fx:id="defaultYes_RadioButton" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1">
+                           <children>
+                              <RadioButton fx:id="IpCam_DefaultYes_RadioButton" mnemonicParsing="false" text="是">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="DefaultSelectToggleGroup" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="IpCam_DefaultNo_RadioButton" mnemonicParsing="false" selected="true" text="否" toggleGroup="$DefaultSelectToggleGroup">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                        <Label text="名稱" underline="true" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="IpCam_NameText" prefWidth="250.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <Label text="RTSP" underline="true" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="77.0" prefWidth="683.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <TextField fx:id="IpCam_RTSPText" prefHeight="34.0" prefWidth="600.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="87.0" prefWidth="722.0" spacing="20.0" GridPane.columnSpan="3" GridPane.rowIndex="3">
+                           <children>
+                              <Button fx:id="IpCam_InsertButton" mnemonicParsing="false" onMouseClicked="#insertIpCamMouseClicked" prefWidth="120.0" text="新增">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/EstablishLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onMouseClicked="#clearIpCamMouseClicked" prefWidth="120.0" text="清空">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RefreshLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="IpCam_ModifyButton" disable="true" mnemonicParsing="false" onMouseClicked="#modifyIpCamMouseClicked" prefWidth="120.0" text="修改">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="IpCam_DeleteButton" disable="true" mnemonicParsing="false" onMouseClicked="#deleteIpCamMouseClicked" prefWidth="120.0" text="刪除">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/DeleteLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="IpCam_TableView" editable="true" onMouseClicked="#IpCamTableViewMouseClicked" prefHeight="576.0" prefWidth="582.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
+                           <columns>
+                              <TableColumn fx:id="IpCam_DefaultPreview_Column" prefWidth="50.0" resizable="false" sortable="false" text="預設" />
+                              <TableColumn fx:id="IpCam_Name_Column" prefWidth="150.0" resizable="false" sortable="false" text="名稱" />
+                              <TableColumn fx:id="IpCam_RTSP_Column" prefWidth="800.0" text="RTSP" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="IpCam_PreviewButton" disable="true" mnemonicParsing="false" onMouseClicked="#previewIpCamMouseClicked" prefWidth="120.0" text="預覽" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/ShowLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <ImageView fx:id="IpCam_PreviewImageView" fitHeight="270.0" fitWidth="480.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab disable="true" style="-fx-font-size: 15;" text="參數檔更新">
+               <content>
+                  <GridPane alignment="CENTER" hgap="10.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="719.0" minWidth="10.0" prefWidth="233.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="590.0" minWidth="10.0" prefWidth="106.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="590.0" minWidth="10.0" prefWidth="482.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets left="20.0" right="20.0" top="50.0" />
+                     </padding>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="700.0" text="【貨單查詢】視窗設定">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1">
+                           <children>
+                              <Label fx:id="UpdateConfig_StatusLabel" alignment="CENTER" prefHeight="30.0" textFill="RED">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2">
+                           <children>
+                              <ProgressBar fx:id="UpdateConfig_ProgressBar" prefHeight="25.0" prefWidth="150.0" progress="0.0" visible="false" />
+                              <Button fx:id="UpdateConfig_UpdateButton" mnemonicParsing="false" onMouseClicked="#UpdateConfigMouseClicked" prefHeight="25.0" prefWidth="140.0" text="更新檔案">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RefreshLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+        </tabs>
+         <padding>
+            <Insets bottom="10.0" top="5.0" />
+         </padding>
+      </TabPane>
+   </center>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>

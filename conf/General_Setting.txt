@@ -1,0 +1,4 @@
+Database_Address:zyh.sytes.net:38433
+Database_Name:ERP
+Database_User_Name:erp_test
+Database_User_Password:erp_test

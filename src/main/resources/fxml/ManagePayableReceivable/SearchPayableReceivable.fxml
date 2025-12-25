@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="SearchPayableReceivable_BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1920.0" style="-fx-background-color: #D0BEE1;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.ManagePayableReceivable.SearchPayableReceivable.SearchPayableReceivable_Controller">
+   <top>
+      <GridPane vgap="10.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="955.0" minWidth="10.0" prefWidth="128.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1805.0" minWidth="0.0" prefWidth="787.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1805.0" minWidth="10.0" prefWidth="986.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="查詢方式" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1">
+               <children>
+                  <RadioButton fx:id="ObjectID_RadioButton" mnemonicParsing="false" onMouseClicked="#ObjectIDMouseClicked" selected="true" text="對象編號">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="SearchColumnToggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="InvoiceNumber_RadioButton" mnemonicParsing="false" onMouseClicked="#InvoiceNumberMouseClicked" text="發票號碼" toggleGroup="$SearchColumnToggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="CheckNumber_RadioButton" mnemonicParsing="false" onMouseClicked="#CHeckNumberMouseClicked" text="票據號碼" toggleGroup="$SearchColumnToggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Label text="查詢欄位" underline="true" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <TextField fx:id="SearchKeyWordText" onKeyReleased="#SearchKeyWordKeyReleased" prefWidth="250.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Button mnemonicParsing="false" onMouseClicked="#SearchPayableReceivableMouseClicked" prefHeight="30.0" prefWidth="120.0" text="送出">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/SearchLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <Label text="日期欄位" underline="true" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <RadioButton fx:id="PayableReceivableDate_RadioButton" mnemonicParsing="false" selected="true" text="付款日">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="SearchDateColumnToggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="CheckDueDate_RadioButton" mnemonicParsing="false" text="票據到期日" toggleGroup="$SearchDateColumnToggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Label text="起始日期" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="StartDate_DatePicker" editable="false" prefWidth="160.0" style="-fx-font-size: 16;" />
+                  <Label text="結束日期" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="EndDate_DatePicker" editable="false" prefWidth="160.0" style="-fx-font-size: 16;" />
+                  <Button mnemonicParsing="false" onMouseClicked="#SearchPayReceiveByDateMouseClicked" prefHeight="30.0" prefWidth="140.0" text="日期搜尋">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/SearchLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <Label text="日期查詢" underline="true" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#modifyPayableReceivableMouseClicked" prefWidth="120.0" text="修改">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/UpdateLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#deletePayableReceivableMouseClicked" prefWidth="120.0" text="刪除">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/DeleteLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#printPayableReceivableMouseClicked" prefHeight="30.0" prefWidth="120.0" text="列印">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/PrinterLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#exportCheckMouseClicked" prefWidth="140.0" text="支票匯出">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/DownloadLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </GridPane>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" spacing="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
+               <children>
+                  <Label text="總筆數：">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TotalOrderCount_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label text="筆">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
+               <children>
+                  <Label text="票面額：">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TotalCheckPrice_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
+               <children>
+                  <Label text="現金額：">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TotalCash_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
+               <children>
+                  <Label text="沖帳額：">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TotalOffsetPrice_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+         <children>
+            <TableView fx:id="TableView" prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn fx:id="existWaitingOrder_tableColumn" prefWidth="70.0" resizable="false" text="待入倉" />
+                  <TableColumn fx:id="OrderNumberColumn" prefWidth="150.0" resizable="false" text="單號" />
+                  <TableColumn fx:id="ObjectNickNameColumn" prefWidth="250.0" resizable="false" text="對象簡稱" />
+                  <TableColumn fx:id="CheckTitleColumn" prefWidth="160.0" resizable="false" text="支票抬頭" />
+                  <TableColumn fx:id="CheckNumberColumn" prefWidth="120.0" resizable="false" text="票據號碼" />
+                  <TableColumn fx:id="CheckDueDateColumn" prefWidth="100.0" resizable="false" text="票據到期日" />
+                  <TableColumn fx:id="CheckPriceColumn" prefWidth="100.0" resizable="false" text="票面額" />
+                  <TableColumn fx:id="CashColumn" prefWidth="100.0" resizable="false" text="現金" />
+                  <TableColumn fx:id="DepositColumn" prefWidth="100.0" resizable="false" text="訂金" />
+                  <TableColumn fx:id="OtherDiscountColumn" prefWidth="100.0" resizable="false" text="其他折讓" />
+                  <TableColumn fx:id="RemittanceFeeAndPostageColumn" prefWidth="100.0" resizable="false" text="郵資與匯費" />
+                  <TableColumn fx:id="CashDiscountColumn" prefWidth="100.0" resizable="false" text="現金折讓" />
+                  <TableColumn fx:id="OffsetPriceColumn" prefWidth="100.0" resizable="false" text="沖帳額" />
+                  <TableColumn fx:id="ObjectBankNickNameColumn" prefWidth="150.0" resizable="false" text="對象銀行簡稱" />
+                  <TableColumn fx:id="RemarkColumn" prefWidth="260.0" resizable="false" text="備註" />
+               </columns>
+            </TableView>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

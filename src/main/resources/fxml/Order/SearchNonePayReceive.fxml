@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.Order.SearchNonePayReceive.SearchNonePayReceive_Controller">
+   <top>
+      <GridPane prefHeight="177.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="953.0" minWidth="10.0" prefWidth="87.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1864.0" minWidth="10.0" prefWidth="1833.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="月結" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="起始日期" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="CheckoutByMonthStartDate_DatePicker" editable="false" prefWidth="160.0" style="-fx-font-size: 16;" />
+                  <Label text="結束日期" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="CheckoutByMonthEndDate_DatePicker" editable="false" prefWidth="160.0" style="-fx-font-size: 16;" />
+                  <Button mnemonicParsing="false" onMouseClicked="#PreviousTermMouseClicked_CheckoutByMonth" prefHeight="30.0" prefWidth="120.0" text="上一期">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../../Image/Previous.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#NextTermMouseClicked_CheckoutByMonth" prefHeight="30.0" prefWidth="120.0" text="下一期">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../../Image/Next.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="非月結" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="起始日期" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="NoneCheckoutByMonthStartDate_DatePicker" editable="false" prefWidth="160.0" style="-fx-font-size: 16;" />
+                  <Label text="結束日期" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="NoneCheckoutByMonthEndDate_DatePicker" editable="false" prefWidth="160.0" style="-fx-font-size: 16;" />
+                  <Button mnemonicParsing="false" onMouseClicked="#PreviousTermMouseClicked_NoneCheckoutByMonth" prefHeight="30.0" prefWidth="120.0" text="上一期">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../../Image/Previous.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#NextTermMouseClicked_NoneCheckoutByMonth" prefHeight="30.0" prefWidth="120.0" text="下一期">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../../Image/Next.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Label text="對象名稱">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <TextField fx:id="ObjectNameText" onKeyReleased="#SearchObjectNameKeyReleased" prefWidth="430.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Label text="起始對象">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <ComboBox fx:id="StartObjectID_ComboBox" onAction="#StartObjectIDOnAction" onKeyReleased="#StartObjectIDKeyReleased" onMouseClicked="#StartObjectIDMouseClicked" onShowing="#StartObjectIDOnShowing" prefWidth="240.0" style="-fx-font-size: 15;" />
+                  <Label text="結束對象">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="EndObjectID_ComboBox" onAction="#EndObjectIDOnAction" onKeyReleased="#EndObjectIDKeyReleased" onMouseClicked="#EndObjectIDMouseClicked" onShowing="#EndObjectIDOnShowing" prefWidth="240.0" style="-fx-font-size: 15;" />
+                  <Button mnemonicParsing="false" onMouseClicked="#SearchMouseClicked" prefHeight="30.0" prefWidth="120.0" text="查詢">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../../Image/SearchLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#PrintMouseClicked" prefHeight="30.0" prefWidth="120.0" text="列印">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0">
+                           <image>
+                              <Image url="@../../Image/PrinterLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="exportPayable_Button" mnemonicParsing="false" onMouseClicked="#exportPayableMouseClicked" prefWidth="180.0" text="應付帳款總表">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/DownloadLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </HBox>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TableView fx:id="TableView" onMouseClicked="#TableViewMouseClicked" prefHeight="712.0" prefWidth="1920.0">
+              <columns>
+                  <TableColumn fx:id="Select_TableColumn" prefWidth="40.0" resizable="false" sortable="false">
+                     <graphic>
+                        <CheckBox fx:id="SelectAll_CheckBox" mnemonicParsing="false" onAction="#SelectAllOnAction">
+                           <font>
+                              <Font name="System Bold Italic" size="16.0" />
+                           </font>
+                        </CheckBox>
+                     </graphic>
+                  </TableColumn>
+                <TableColumn fx:id="ObjectID_TableColumn" resizable="false" text="對象編號" />
+                <TableColumn fx:id="ObjectName_TableColumn" prefWidth="250.0" resizable="false" text="對象名稱" />
+                  <TableColumn fx:id="OrderQuantity_TableColumn" minWidth="0.0" resizable="false" text="貨單數" />
+                  <TableColumn fx:id="OrderPriceAmount_TableColumn" minWidth="0.0" prefWidth="120.0" resizable="false" text="貨單額" />
+                  <TableColumn fx:id="ReturnOrderQuantity_TableColumn" minWidth="0.0" resizable="false" text="退貨單數" />
+                  <TableColumn fx:id="ReturnOrderPriceAmount_TableColumn" prefWidth="120.0" resizable="false" text="退貨額" />
+                  <TableColumn fx:id="Tax_TableColumn" prefWidth="120.0" resizable="false" text="稅額" />
+                  <TableColumn fx:id="Discount_TableColumn" prefWidth="120.0" resizable="false" text="折讓" />
+                  <TableColumn fx:id="PayReceivePrice_TableColumn" prefWidth="120.0" resizable="false" text="應收/付額" />
+                  <TableColumn fx:id="ActualPayReceivePrice_TableColumn" prefWidth="120.0" resizable="false" text="實應收/付" />
+                  <TableColumn fx:id="NonePayReceiveHistoryDate_TableColumn" prefWidth="170.0" resizable="false" text="(前期)未結帳款項日期" />
+              </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </center>
+   <bottom>
+      <GridPane alignment="CENTER" prefHeight="70.0" prefWidth="1920.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowSpan="2">
+               <children>
+                  <Label text="**** 合計 ****" textFill="#2a6690">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label fx:id="TotalOrderCountTitle_Label" text="進/出單數" textFill="#2a6690">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="TotalOrderCount_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
+               <children>
+                  <Label fx:id="TotalOrderPriceTitle_Label" text="進/出貨額" textFill="#2a6690">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="TotalOrderPrice_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3">
+               <children>
+                  <Label fx:id="TotalReturnOrderCountTitle_Label" text="退貨單數" textFill="#2a6690">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="TotalReturnOrderCount_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4">
+               <children>
+                  <Label fx:id="TotalReturnOrderPriceTitle_Label" text="退貨額" textFill="#2a6690">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="TotalReturnOrderPrice_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5">
+               <children>
+                  <Label text="稅額" textFill="#2a6690">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="TotalTax_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="6">
+               <children>
+                  <Label text="折讓" textFill="#2a6690">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="TotalDiscount_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="7">
+               <children>
+                  <Label fx:id="PayReceiveTotalPriceTitle_Label" text="應付額" textFill="#2a6690">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="PayReceiveTotalPrice_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="8">
+               <children>
+                  <Label fx:id="ActualPayReceiveTotalPriceTitle_Label" text="實應付" textFill="#2a6690">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="ActualPayReceiveTotalPrice_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </GridPane>
+   </bottom>
+   <padding>
+      <Insets bottom="10.0" />
+   </padding>
+</BorderPane>

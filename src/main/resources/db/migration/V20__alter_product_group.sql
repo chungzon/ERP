@@ -1,0 +1,1 @@
+ALTER TABLE ProductGroup ADD SinglePrice int not null default ((0))

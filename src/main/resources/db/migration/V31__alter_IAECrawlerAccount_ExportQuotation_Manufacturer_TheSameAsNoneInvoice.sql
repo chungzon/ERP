@@ -1,0 +1,1 @@
+ALTER TABLE dbo.IAECrawlerAccount_ExportQuotation_Manufacturer ADD TheSameAsNoneInvoice bit default ((0)) not null

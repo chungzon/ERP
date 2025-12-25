@@ -1,0 +1,327 @@
+GridPane {
+    -fx-background-color: red;
+    -fx-background-radius: 5.0;
+    -fx-background-insets: 0.0 5.0 0.0 5.0;
+    -fx-padding: 10.0;
+    -fx-hgap: 10.0;
+    -fx-vgap: 10.0;
+}
+
+.function {
+	-fx-font-style:normal ;
+	-fx-font-size: 22.0px;
+	-fx-font-weight: bold;
+	-fx-text-fill: black ;
+}
+.function:pressed {
+    -fx-padding: 15 15 13 15;
+    -fx-background-insets: 0 0 0 0,2 0 3 0, 2 0 4 0, 2 0 5 0;
+    -fx-effect: dropshadow( two-pass-box , rgba(0.0,0.0,0.0,0.4) , 2.0, 0.0 , 0.0 , 1.0 );
+}
+.function:hover {
+	-fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 6.0, 0.0 , 0.0 , 3.0 );
+}
+.green {
+    -fx-background-color:
+        linear-gradient(#c6f68d, #c6f68d),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #c6f68d 45.0%, #90ee02 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+.blue {
+    -fx-background-color:
+        linear-gradient(#b794f6, #b794f6),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #b794f6 45.0%, #7e3ff2 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+.yellow {
+    -fx-background-color:
+        linear-gradient(#ffc77d, #ffc77d),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #ffc77d 45.0%, #ff9e22 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+.brown{
+    -fx-background-color:
+        linear-gradient(#BCAAA4, #BCAAA4),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #BCAAA4 45.0%, #A1887F 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+.bluegray{
+    -fx-background-color:
+        linear-gradient(#B0BEC5, #B0BEC5),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #B0BEC5 45.0%, #78909C 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+.deeporange{
+    -fx-background-color:
+        linear-gradient(#FF6E40, #FF6E40),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #FF6E40 45.0%, #FF3D00 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+.amber{
+    -fx-background-color:
+        linear-gradient(#FFD740, #FFD740),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #FFD740 45.0%, #FFC400 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+.lime{
+    -fx-background-color:
+        linear-gradient(#EEFF41, #EEFF41),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #EEFF41 45.0%, #C6FF00 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+.gray{
+    -fx-background-color:
+        linear-gradient(#EEEEEE, #EEEEEE),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #EEEEEE 45.0%, #BDBDBD 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+.deeppurple{
+    -fx-background-color:
+        linear-gradient(#8C9EFF, #8C9EFF),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #8C9EFF 45.0%, #651FFF 50.0%);
+    -fx-background-radius: 6.0, 5.0;
+    -fx-background-insets: 0.0, 1.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.4) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+#round-red {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00);
+    -fx-background-radius: 30.0;
+    -fx-background-insets: 0.0;
+    -fx-text-fill: white;
+}
+#bevel-grey {
+    -fx-background-color: 
+        linear-gradient(#f2f2f2, #d6d6d6),
+        linear-gradient(#fcfcfc 0.0%, #d9d9d9 20.0%, #d6d6d6 100.0%),
+        linear-gradient(#dddddd 0.0%, #f6f6f6 50.0%);
+    -fx-background-radius: 8.0,7.0,6.0;
+    -fx-background-insets: 0.0,1.0,2.0;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.6) , 5.0, 0.0 , 0.0 , 1.0 );
+}
+#glass-grey {
+    -fx-background-color: 
+        #c3c4c4,
+        linear-gradient(#d6d6d6 50.0%, white 100.0%),
+        radial-gradient(center 50.0% -40.0%, radius 200.0%, #e6e6e6 45.0%, rgba(230.0,230.0,230.0,0.0) 50.0%);
+    -fx-background-radius: 30.0;
+    -fx-background-insets: 0.0,1.0,1.0;
+    -fx-text-fill: black;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.6) , 3.0, 0.0 , 0.0 , 1.0 );
+}
+#shiny-orange {
+    -fx-background-color: 
+        linear-gradient(#ffd65b, #e68400),
+        linear-gradient(#ffef84, #f2ba44),
+        linear-gradient(#ffea6a, #efaa22),
+        linear-gradient(#ffe657 0.0%, #f8c202 50.0%, #eea10b 100.0%),
+        linear-gradient(from 0.0% 0.0% to 15.0% 50.0%, rgba(255.0,255.0,255.0,0.9), rgba(255.0,255.0,255.0,0.0));
+    -fx-background-radius: 30.0;
+    -fx-background-insets: 0.0,1.0,2.0,3.0,0.0;
+    -fx-text-fill: #654b00;
+    -fx-font-weight: bold;
+    -fx-font-size: 14.0px;
+    -fx-padding: 10.0 20.0 10.0 20.0;
+}
+#dark-blue {
+    -fx-background-color: 
+        #090a0c,
+        linear-gradient(#38424b 0.0%, #1f2429 20.0%, #191d22 100.0%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50.0% 0.0%, radius 100.0%, rgba(114.0,131.0,148.0,0.9), rgba(255.0,255.0,255.0,0.0));
+    -fx-background-radius: 5.0,4.0,3.0,5.0;
+    -fx-background-insets: 0.0,1.0,2.0,0.0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.6) , 5.0, 0.0 , 0.0 , 1.0 );
+    -fx-font-family: "Arial";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 12.0px;
+    -fx-padding: 10.0 20.0 10.0 20.0;
+}
+#dark-blue Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0.0,0.0,0.0,0.9) , 1.0, 0.0 , 0.0 , 1.0 );
+}
+#record-sales {
+    -fx-padding: 8.0 15.0 15.0 15.0;
+    -fx-background-insets: 0.0,0.0 0.0 5.0 0.0, 0.0 0.0 6.0 0.0, 0.0 0.0 7.0 0.0;
+    -fx-background-radius: 8.0;
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #a34313 0.0%, #903b12 100.0%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #d86e3a, #c54e2c);
+    -fx-effect: dropshadow( gaussian , rgba(0.0,0.0,0.0,0.75) , 4.0,0.0,0.0,1.0 );
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+}
+#record-sales:hover {
+    -fx-background-color: 
+        linear-gradient(from 0.0% 93.0% to 0.0% 100.0%, #a34313 0.0%, #903b12 100.0%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50.0% 50.0%, radius 100.0%, #ea7f4b, #c54e2c);
+}
+#record-sales:pressed {
+    -fx-padding: 10.0 15.0 13.0 15.0;
+    -fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0, 2.0 0.0 4.0 0.0, 2.0 0.0 5.0 0.0;
+}
+#record-sales Text {
+    -fx-fill: white;
+    -fx-effect: dropshadow( gaussian , #a30000 , 0.0,0.0,0.0,2.0 );
+}
+#rich-blue {
+    -fx-background-color: 
+        #000000,
+        linear-gradient(#7ebcea, #2f4b8f),
+        linear-gradient(#426ab7, #263e75),
+        linear-gradient(#395cab, #223768);
+    -fx-background-insets: 0.0,1.0,2.0,3.0;
+    -fx-background-radius: 3.0,2.0,2.0,2.0;
+    -fx-padding: 12.0 30.0 12.0 30.0;
+    -fx-text-fill: white;
+    -fx-font-size: 12.0px;
+}
+#rich-blue Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0.0,0.0,0.0,0.8) , 0.0, 0.0 , 0.0 , 1.0);
+}
+#big-yellow {
+    -fx-background-color: 
+        #ecebe9,
+        rgba(0.0,0.0,0.0,0.05),
+        linear-gradient(#dcca8a, #c7a740),
+        linear-gradient(#f9f2d6 0.0%, #f4e5bc 20.0%, #e6c75d 80.0%, #e2c045 100.0%),
+        linear-gradient(#f6ebbe, #e6c34d);
+    -fx-background-insets: 0.0,9.0 9.0 8.0 9.0,9.0,10.0,11.0;
+    -fx-background-radius: 50.0;
+    -fx-padding: 15.0 30.0 15.0 30.0;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18.0px;
+    -fx-text-fill: #311c09;
+    -fx-effect: innershadow( three-pass-box , rgba(0.0,0.0,0.0,0.1) , 2.0, 0.0 , 0.0 , 1.0);
+}
+#big-yellow Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(255.0,255.0,255.0,0.5) , 0.0, 0.0 , 0.0 , 1.0);
+}
+#iphone-toolbar {
+    -fx-background-color: linear-gradient(#98a8bd 0.0%, #8195af 25.0%, #6d86a4 100.0%);
+}
+#iphone {
+    -fx-background-color: 
+        #a6b5c9,
+        linear-gradient(#303842 0.0%, #3e5577 20.0%, #375074 100.0%),
+        linear-gradient(#768aa5 0.0%, #849cbb 5.0%, #5877a2 50.0%, #486a9a 51.0%, #4a6c9b 100.0%);
+    -fx-background-insets: 0.0 0.0 -1.0 0.0,0.0,1.0;
+    -fx-background-radius: 5.0,5.0,4.0;
+    -fx-padding: 7.0 30.0 7.0 30.0;
+    -fx-text-fill: #242d35;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 12.0px;
+    -fx-text-fill: white;
+}
+#iphone Text {
+    -fx-effect: dropshadow( one-pass-box , rgba(0.0,0.0,0.0,0.8) , 0.0, 0.0 , 0.0 , -1.0 );
+}
+#ipad-dark-grey {
+    -fx-background-color: 
+        linear-gradient(#686868 0.0%, #232723 25.0%, #373837 75.0%, #757575 100.0%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(#9d9e9d 0.0%, #6b6a6b 20.0%, #343534 80.0%, #242424 100.0%),
+        linear-gradient(#8a8a8a 0.0%, #6b6a6b 20.0%, #343534 80.0%, #262626 100.0%),
+        linear-gradient(#777777 0.0%, #606060 50.0%, #505250 51.0%, #2a2b2a 100.0%);
+    -fx-background-insets: 0.0,1.0,4.0,5.0,6.0;
+    -fx-background-radius: 9.0,8.0,5.0,4.0,3.0;
+    -fx-padding: 15.0 30.0 15.0 30.0;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18.0px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(255.0,255.0,255.0,0.2) , 1.0, 0.0 , 0.0 , 1.0);
+}
+#ipad-dark-grey Text {
+    -fx-effect: dropshadow( one-pass-box , black , 0.0, 0.0 , 0.0 , -1.0 );
+}
+#ipad-grey {
+    -fx-background-color: 
+        linear-gradient(#686868 0.0%, #232723 25.0%, #373837 75.0%, #757575 100.0%),
+        linear-gradient(#020b02, #3a3a3a),
+        linear-gradient(#b9b9b9 0.0%, #c2c2c2 20.0%, #afafaf 80.0%, #c8c8c8 100.0%),
+        linear-gradient(#f5f5f5 0.0%, #dbdbdb 50.0%, #cacaca 51.0%, #d7d7d7 100.0%);
+    -fx-background-insets: 0.0,1.0,4.0,5.0;
+    -fx-background-radius: 9.0,8.0,5.0,4.0;
+    -fx-padding: 15.0 30.0 15.0 30.0;
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 18.0px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-effect: dropshadow( three-pass-box , rgba(255.0,255.0,255.0,0.2) , 1.0, 0.0 , 0.0 , 1.0);
+}
+#ipad-grey Text {
+    -fx-effect: dropshadow( one-pass-box , white , 0.0, 0.0 , 0.0 , 1.0 );
+}
+#lion-default {
+    -fx-background-color: 
+        rgba(0.0,0.0,0.0,0.08),
+        linear-gradient(#5a61af, #51536d),
+        linear-gradient(#e4fbff 0.0%,#cee6fb 10.0%, #a5d3fb 50.0%, #88c6fb 51.0%, #d5faff 100.0%);
+    -fx-background-insets: 0.0 0.0 -1.0 0.0,0.0,1.0;
+    -fx-background-radius: 5.0,5.0,4.0;
+    -fx-padding: 3.0 30.0 3.0 30.0;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 14.0px;
+}
+#lion {
+    -fx-background-color: 
+        rgba(0.0,0.0,0.0,0.08),
+        linear-gradient(#9a9a9a, #909090),
+        linear-gradient(white 0.0%, #f3f3f3 50.0%, #ececec 51.0%, #f2f2f2 100.0%);
+    -fx-background-insets: 0.0 0.0 -1.0 0.0,0.0,1.0;
+    -fx-background-radius: 5.0,5.0,4.0;
+    -fx-padding: 3.0 30.0 3.0 30.0;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 14.0px;
+}
+#windows7-default {
+    -fx-background-color: 
+        #3c7fb1,
+        linear-gradient(#fafdfe, #e8f5fc),
+        linear-gradient(#eaf6fd 0.0%, #d9f0fc 49.0%, #bee6fd 50.0%, #a7d9f5 100.0%);
+    -fx-background-insets: 0.0,1.0,2.0;
+    -fx-background-radius: 3.0,2.0,1.0;
+    -fx-padding: 3.0 30.0 3.0 30.0;
+    -fx-text-fill: black;
+    -fx-font-size: 14.0px;
+}
+#windows7 {
+    -fx-background-color: 
+        #707070,
+        linear-gradient(#fcfcfc, #f3f3f3),
+        linear-gradient(#f2f2f2 0.0%, #ebebeb 49.0%, #dddddd 50.0%, #cfcfcf 100.0%);
+    -fx-background-insets: 0.0,1.0,2.0;
+    -fx-background-radius: 3.0,2.0,1.0;
+    -fx-padding: 3.0 30.0 3.0 30.0;
+    -fx-text-fill: black;
+    -fx-font-size: 14.0px;
+}
+.bluegray50 {
+	-fx-background-color: #546E7A;
+}

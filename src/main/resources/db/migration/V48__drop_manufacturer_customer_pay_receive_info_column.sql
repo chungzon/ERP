@@ -1,0 +1,12 @@
+DECLARE @ConstraintName nvarchar(200) 
+SELECT @ConstraintName = Name FROM SYS.DEFAULT_CONSTRAINTS WHERE PARENT_OBJECT_ID = OBJECT_ID('Manufacturer_PayInfo')
+AND PARENT_COLUMN_ID = ( SELECT column_id FROM sys.columns WHERE NAME = N'Installment' AND object_id = OBJECT_ID(N'Manufacturer_PayInfo'))
+IF @ConstraintName IS NOT NULL EXEC ( 'ALTER TABLE Manufacturer_PayInfo DROP CONSTRAINT ' + @ConstraintName )
+IF EXISTS (SELECT * FROM syscolumns WHERE id=object_id('Manufacturer_PayInfo') AND name='Installment')
+EXEC('ALTER TABLE Manufacturer_PayInfo DROP COLUMN Installment')
+
+SELECT @ConstraintName = Name FROM SYS.DEFAULT_CONSTRAINTS WHERE PARENT_OBJECT_ID = OBJECT_ID('Customer_ReceiveInfo')
+AND PARENT_COLUMN_ID = ( SELECT column_id FROM sys.columns WHERE NAME = N'Installment' AND object_id = OBJECT_ID(N'Customer_ReceiveInfo'))
+IF @ConstraintName IS NOT NULL EXEC ( 'ALTER TABLE Customer_ReceiveInfo DROP CONSTRAINT ' + @ConstraintName )
+IF EXISTS (SELECT * FROM syscolumns WHERE id=object_id('Customer_ReceiveInfo') AND name='Installment')
+EXEC('ALTER TABLE Customer_ReceiveInfo DROP COLUMN Installment')

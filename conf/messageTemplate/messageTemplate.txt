@@ -1,0 +1,4 @@
+大姊您好！
+麻煩您有空時幫我開一下發票：$invoice_type，
+$factory_name 謝謝！
+明天會過去拿。

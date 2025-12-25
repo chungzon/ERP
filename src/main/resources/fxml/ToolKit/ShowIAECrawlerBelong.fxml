@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.Toolkit.ShowIAECrawlerBelong.ShowIAECrawlerBelong_Controller">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#deleteMouseClicked" prefWidth="120.0" text="刪除">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/DeleteLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#CloseMouseClicked" prefWidth="150.0" text="離開">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/Close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <HBox alignment="CENTER" prefHeight="222.0" prefWidth="850.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="TableView" editable="true" onMouseClicked="#TableViewMouseClicked" prefHeight="289.0" prefWidth="700.0">
+               <columns>
+                  <TableColumn fx:id="BelongName_TableColumn" prefWidth="150.0" resizable="false" sortable="false" text="所屬名稱" />
+                  <TableColumn fx:id="BelongURL_TableColumn" onEditCommit="#BelongURLOnEditCommit" prefWidth="500.0" resizable="false" sortable="false" text="網址" />
+               </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </HBox>
+   </center>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
+   <top>
+      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="900.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="30.0" prefWidth="80.0" text="所屬名稱">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="BelongNameText" prefWidth="150.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Label prefHeight="24.0" prefWidth="60.0" text="網址">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="BelongURLText" prefWidth="350.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" onMouseClicked="#insertMouseClicked" prefHeight="30.0" prefWidth="120.0" text="新增">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/EstablishLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CustomMenuItem?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="SearchOrder_BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1920.0" style="-fx-background-color: #90CAF9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.Order.SearchOrder.SearchOrder_Controller">
+   <top>
+      <GridPane prefHeight="178.0" prefWidth="1920.0" vgap="10.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="955.0" minWidth="10.0" prefWidth="148.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1805.0" minWidth="0.0" prefWidth="424.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1805.0" minWidth="10.0" prefWidth="223.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1805.0" minWidth="10.0" prefWidth="752.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1805.0" minWidth="10.0" prefWidth="203.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1805.0" minWidth="10.0" prefWidth="151.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="42.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="單別" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <HBox fx:id="Quotation_WaitingPurchase_HBox" alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1">
+               <children>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#PurchaseQuotationMouseClicked" selected="true" text="採購單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="OrderTypeToggleGroup2" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#WaitingPurchaseAndSubBillMouseClicked" text="待入倉 &amp; 子貨單" toggleGroup="$OrderTypeToggleGroup2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox fx:id="Purchase_Return_HBox" alignment="CENTER_LEFT" spacing="20.0" visible="false" GridPane.columnIndex="1">
+               <children>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#PurchaseAndReturnOrderMouseClicked" selected="true" text="進貨 &amp; 進退貨單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="OrderTypeToggleGroup11" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#PurchaseOrderMouseClicked" text="進貨單" toggleGroup="$OrderTypeToggleGroup11">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#PurchaseReturnOrderMouseClicked" text="進退貨單" toggleGroup="$OrderTypeToggleGroup11">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox fx:id="Quotation_WaitingShipment_HBox" alignment="CENTER_LEFT" spacing="20.0" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="2">
+               <children>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#ShipmentQuotationMouseClicked" selected="true" text="報價單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="OrderTypeToggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#WaitingShipmentAndShipmentSubBillMouseClicked" text="待出貨 &amp; 子貨單" toggleGroup="$OrderTypeToggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox fx:id="Shipment_Return_HBox" alignment="CENTER_LEFT" spacing="20.0" visible="false" GridPane.columnIndex="1">
+               <children>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#ShipmentAndReturnOrderMouseClicked" selected="true" text="出貨 &amp; 出退貨單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="OrderTypeToggleGroup1" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#ShipmentOrderMouseClicked" text="出貨單" toggleGroup="$OrderTypeToggleGroup1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" onMouseClicked="#ShipmentReturnOrderMouseClicked" text="出退貨單" toggleGroup="$OrderTypeToggleGroup1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Label text="篩選" underline="true" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <CheckBox fx:id="OrderBorrowed_CheckBox" mnemonicParsing="false" text="借測單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+                  <CheckBox fx:id="combinedOrder_CheckBox" mnemonicParsing="false" text="併單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </CheckBox>
+               </children>
+            </HBox>
+            <Label text="查詢方式" underline="true" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <HBox fx:id="SearchMethodHBox" alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <RadioButton fx:id="SearchObjectOrProjectCode_RadioButton" mnemonicParsing="false" text="對象編號(名稱) / 專案編號">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="SearchMethodToggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="SearchAll_RadioButton" mnemonicParsing="false" selected="true" text="全部" toggleGroup="$SearchMethodToggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <Label text="查詢欄位" underline="true" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <Label fx:id="tooltip_Label">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/Tooltip.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <tooltip>
+                        <Tooltip fx:id="tooltip" style="-fx-base: #AE3522; -fx-text-fill: orange; -fx-font: normal bold 24 Langdon;" />
+                     </tooltip>
+                  </Label>
+                  <Button fx:id="combinedOrder_Button" mnemonicParsing="false" onMouseClicked="#combinedOrderMouseClicked" prefWidth="130.0" text="合併貨單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/combine.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+               <children>
+                  <TextField fx:id="SearchColumnText" onKeyReleased="#SearchColumnKeyReleased" prefWidth="300.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <SplitMenuButton mnemonicParsing="false" onMouseClicked="#SearchOrderByColumnMouseClicked" prefWidth="140.0" text="送出">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/SearchLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <items>
+                        <CustomMenuItem hideOnClick="false" mnemonicParsing="false">
+                           <content>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <CheckBox fx:id="WaitingOrderReviewStatus_CheckBox_SearchByColumn" mnemonicParsing="false" onAction="#WaitingOrderReviewStatus_CheckBox_SearchByColumn_OnAction" text="待審查">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false" mnemonicParsing="false">
+                           <content>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <CheckBox fx:id="WaitingModifyOrderReview_CheckBox_SearchByColumn" mnemonicParsing="false" onAction="#WaitingModifyOrderReview_CheckBox_SearchByColumn_OnAction" text="待修改">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false" mnemonicParsing="false">
+                           <content>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <CheckBox fx:id="OrderReviewFinished_CheckBox_SearchByColumn" mnemonicParsing="false" onAction="#OrderReviewFinished_CheckBox_SearchByColumn_OnAction" text="審查通過">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </CustomMenuItem>
+                     </items>
+                  </SplitMenuButton>
+                  <Button fx:id="DeleteOrder_Button" disable="true" mnemonicParsing="false" onMouseClicked="#deleteOrderMouseClicked" prefHeight="30.0" prefWidth="130.0" text="刪除貨單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/DeleteLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <children>
+                  <Label text="起始日期" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="StartDate_DatePicker" editable="false" prefWidth="160.0" style="-fx-font-size: 16;" />
+                  <Label text="結束日期" underline="true">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="EndDate_DatePicker" editable="false" prefWidth="160.0" style="-fx-font-size: 16;" />
+                  <SplitMenuButton mnemonicParsing="false" onMouseClicked="#SearchOrderByDateMouseClicked" text="日期搜尋">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/SearchLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <items>
+                        <CustomMenuItem hideOnClick="false" mnemonicParsing="false">
+                           <content>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <CheckBox fx:id="WaitingOrderReviewStatus_CheckBox_SearchByDate" mnemonicParsing="false" onAction="#WaitingOrderReviewStatus_CheckBox_SearchByDate_OnAction" text="待審查">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false" mnemonicParsing="false">
+                           <content>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <CheckBox fx:id="WaitingModifyOrderReview_CheckBox_SearchByDate" mnemonicParsing="false" onAction="#WaitingModifyOrderReview_CheckBox_SearchByDate_OnAction" text="待修改">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false" mnemonicParsing="false">
+                           <content>
+                              <HBox alignment="CENTER_LEFT">
+                                 <children>
+                                    <CheckBox fx:id="OrderReviewFinished_CheckBox_SearchByDate" mnemonicParsing="false" onAction="#OrderReviewFinished_CheckBox_SearchByDate_OnAction" text="審查通過">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </CustomMenuItem>
+                     </items>
+                  </SplitMenuButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#searchPurchaseOrderMouseClicked" prefHeight="30.0" style="-fx-background-color: #ffff66;" text="查詢廠商貨單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/SearchLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#searchShipmentOrderMouseClicked" prefHeight="30.0" style="-fx-background-color: #D0BEE1;" text="查詢客戶貨單">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/SearchLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowSpan="2">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#TableViewSettingMouseClicked" prefHeight="26.0" prefWidth="130.0" text="視窗設定">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/SettingLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </GridPane>
+   </top>
+   <bottom>
+      <HBox alignment="CENTER" spacing="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
+               <children>
+                  <Label text="總筆數：">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TotalOrderCount_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label text="筆">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
+               <children>
+                  <Label text="總金額：">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TotalOrderPrice_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
+               <children>
+                  <Label text="總利潤：">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="TotalOrderProfit_Label" text="--" textFill="#c91717">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </HBox>
+   </bottom>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+         <children>
+            <TableView fx:id="TableView" onMouseClicked="#TableViewMouseClicked" prefHeight="200.0" prefWidth="200.0">
+               <columns>
+                  <TableColumn fx:id="Select_TableColumn" editable="false" prefWidth="40.0" sortable="false">
+                     <graphic>
+                        <CheckBox fx:id="SelectAll_CheckBox" mnemonicParsing="false" onAction="#SelectAllOnAction">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </CheckBox>
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="EstablishSourceColumn" prefWidth="96.0" resizable="false" text="來源" />
+                  <TableColumn fx:id="OrderSourceColumn" prefWidth="100.0" resizable="false" text="單別" />
+                  <TableColumn fx:id="OrderNumberColumn" prefWidth="140.0" resizable="false" text="單號" />
+                  <TableColumn fx:id="OrderDateColumn" prefWidth="100.0" resizable="false" text="日期" />
+                  <TableColumn fx:id="ObjectIDColumn" resizable="false" text="對象編號" />
+                  <TableColumn fx:id="ObjectNameColumn" prefWidth="160.0" text="對象名稱" />
+                  <TableColumn fx:id="NumberOfItemsColumn" resizable="false" text="項目個數" />
+                  <TableColumn fx:id="TotalPriceIncludeTaxColumn" prefWidth="100.0" resizable="false" text="總金額" />
+                  <TableColumn fx:id="InvoiceNumberColumn" prefWidth="140.0" resizable="false" text="發票號碼" visible="false" />
+                  <TableColumn fx:id="ProjectCodeColumn" resizable="false" text="專案編號" />
+                  <TableColumn fx:id="ProjectNameColumn" prefWidth="520.0" text="專案名稱" />
+                  <TableColumn fx:id="ExportQuotationManufacturerNickNameColumn" prefWidth="90.0" text="匯出廠商" />
+                  <TableColumn fx:id="ReviewStatusColumn" prefWidth="100.0" resizable="false" text="審查狀態" />
+                  <TableColumn fx:id="CashierRemarkColumn" prefWidth="180.0" resizable="false" text="出納備註" />
+                  <TableColumn fx:id="ProjectTotalPriceIncludeTaxColumn" prefWidth="100.0" resizable="false" text="專案價" />
+                  <TableColumn fx:id="ProjectDifferentPriceColumn" prefWidth="100.0" resizable="false" text="差額" />
+                  <TableColumn fx:id="BalanceColumn" prefWidth="100.0" resizable="false" text="餘額" />
+                  <TableColumn fx:id="isCheckoutColumn" resizable="false" text="結帳與否" />
+                  <TableColumn fx:id="isOffsetColumn" resizable="false" text="是否沖帳" />
+                  <TableColumn fx:id="pictureCountColumn" resizable="false" text="圖片數量" />
+                  <TableColumn fx:id="QuotationDateColumn" prefWidth="110.0" resizable="false" text="報價日期" visible="false" />
+                  <TableColumn fx:id="QuotationNumberColumn" prefWidth="140.0" resizable="false" text="報價單號" visible="false" />
+                  <TableColumn fx:id="WaitingOrderDateColumn" prefWidth="110.0" resizable="false" text="待出貨日期" />
+                  <TableColumn fx:id="WaitingOrderNumberColumn" prefWidth="140.0" resizable="false" text="待出貨單號" />
+                  <TableColumn fx:id="AlreadyOrderDateColumn" prefWidth="110.0" resizable="false" text="出貨日期" />
+                  <TableColumn fx:id="AlreadyOrderNumberColumn" prefWidth="140.0" resizable="false" text="出貨單號" />
+               </columns>
+            </TableView>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

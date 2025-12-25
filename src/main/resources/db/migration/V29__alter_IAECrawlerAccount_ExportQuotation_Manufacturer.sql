@@ -1,0 +1,1 @@
+ALTER TABLE dbo.IAECrawlerAccount_ExportQuotation_Manufacturer ADD ManufacturerAllName nvarchar(50) not NULL default '' 

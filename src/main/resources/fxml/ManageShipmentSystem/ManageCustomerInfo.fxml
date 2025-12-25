@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.ManageShipmentSystem.ManageCustomerInfo.ManageCustomerInfo_Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1889.0" minWidth="10.0" prefWidth="1413.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="952.0" minWidth="10.0" prefWidth="507.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="142.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="142.0" minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="325.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="384.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="488.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="539.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="513.0" minHeight="10.0" prefHeight="450.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #C2F7ED;" GridPane.columnSpan="2">
+         <children>
+            <Label prefWidth="80.0" text="客戶編號">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="CustomerAreaTitle_ComboBox" onAction="#CustomerAreaOnAction" prefWidth="130.0" style="-fx-font-size: 15;" />
+            <TextField fx:id="CustomerIDText" onKeyReleased="#CustomerIDKeyReleased" prefHeight="25.0" prefWidth="100.0">
+               <font>
+                  <Font size="15.0" />
+               </font></TextField>
+            <Label prefWidth="80.0" text="客戶名稱">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="CustomerNameText" onKeyPressed="#CustomerNameKeyPressed" prefHeight="25.0" prefWidth="250.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label prefWidth="80.0" text="客戶簡稱">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="CustomerNickNameText" onKeyPressed="#CustomerNickNameKeyPressed" prefHeight="25.0" prefWidth="230.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label prefWidth="80.0" text="結帳方式" textFill="RED">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="CheckoutByMonth_RadioButton" mnemonicParsing="false" text="月結" textFill="RED">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="CheckoutStatusToggleGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="NoneCheckoutByMonth_RadioButton" mnemonicParsing="false" selected="true" text="非月結(帳款結算至當月25日)" textFill="RED" toggleGroup="$CheckoutStatusToggleGroup">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </RadioButton>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0" spacing="20.0" style="-fx-background-color: #C2F7ED;" GridPane.columnSpan="2" GridPane.rowIndex="1">
+         <children>
+            <Label prefWidth="80.0" text="負責人">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="PersonInChargeText" onKeyPressed="#PersonInChargeKeyPressed" prefHeight="25.0" prefWidth="280.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Label prefWidth="80.0" text="聯絡人">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ContactPersonText" onKeyPressed="#ContactPersonKeyPressed" prefHeight="25.0" prefWidth="300.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #C2F7ED;" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="400.0" spacing="5.0">
+               <children>
+                  <Label prefWidth="95.0" text="電話(一)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="Telephone1TitleText" onKeyPressed="#Telephone1TitleKeyPressed" onKeyReleased="#Telephone1TitleKeyReleased" prefHeight="25.0" prefWidth="40.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Label prefWidth="10.0" text="-">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="Telephone1NumberText" onKeyReleased="#Telephone1NumberKeyReleased" prefHeight="25.0" prefWidth="100.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Label prefWidth="10.0" text="#">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="Telephone1TransferText" onKeyReleased="#Telephone1TransferKeyReleased" prefHeight="25.0" prefWidth="100.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="400.0" spacing="5.0">
+               <children>
+                  <Label prefWidth="95.0" text="電話(二)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="Telephone2TitleText" onKeyPressed="#Telephone2TitleKeyPressed" onKeyReleased="#Telephone2TitleKeyReleased" prefHeight="25.0" prefWidth="40.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Label prefWidth="10.0" text="-">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="Telephone2NumberText" onKeyReleased="#Telephone2NumberKeyReleased" prefHeight="25.0" prefWidth="100.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Label prefWidth="10.0" text="#">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="Telephone2TransferText" onKeyReleased="#Telephone2TransferKeyReleased" prefHeight="25.0" prefWidth="100.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="260.0" spacing="5.0">
+               <children>
+                  <Label prefWidth="80.0" text="行動電話">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="CellPhoneTitleText" onKeyPressed="#CellphoneTitleKeyPressed" onKeyReleased="#CellphoneTitleKeyReleased" prefHeight="25.0" prefWidth="60.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Label prefWidth="10.0" text="-">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="CellPhoneNumberText" onKeyReleased="#CellphoneNumberKeyReleased" prefHeight="25.0" prefWidth="90.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #C2F7ED;" GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="110.0" spacing="5.0">
+               <children>
+                  <Label prefWidth="95.0" text="傳真">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="FaxTitleText" onKeyPressed="#FaxTitleKeyPressed" onKeyReleased="#FaxTitleKeyReleased" prefHeight="25.0" prefWidth="40.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Label prefWidth="10.0" text="-">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="FaxNumberText" onKeyPressed="#FaxNumberKeyPressed" onKeyReleased="#FaxNumberKeyReleased" prefHeight="25.0" prefWidth="100.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="5.0">
+               <children>
+                  <Label prefWidth="70.0" text="信箱">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="EmailAccountText" onKeyPressed="#EmailAccountKeyPressed" prefHeight="25.0" prefWidth="185.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+                  <Label prefWidth="30.0" text="\@">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="EmailAddressText" onKeyPressed="#EmailAddressKeyPressed" prefHeight="25.0" prefWidth="140.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="5.0">
+               <children>
+                  <Label prefWidth="80.0" text="會員編號">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="MemberIDText" onKeyPressed="#MemberIDKeyPressed" prefHeight="25.0" prefWidth="170.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #C2F7ED;" GridPane.columnSpan="2" GridPane.rowIndex="4">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <children>
+            <Label prefWidth="80.0" text="公司地址">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="CompanyAddressText" onKeyPressed="#CompanyAddressKeyPressed" prefHeight="25.0" prefWidth="430.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label prefWidth="80.0" text="送貨地址">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="DeliveryAddressText" onKeyPressed="#DeliveryAddressKeyPressed" prefHeight="25.0" prefWidth="400.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <CheckBox fx:id="DeliveryAddress_SameAsCompanyAddress_CheckBox" mnemonicParsing="false" onAction="#DeliveryAddress_SameAsCompanyAddress_OnAction" text="同公司地址">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #C2F7ED;" GridPane.columnSpan="2" GridPane.rowIndex="5">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <children>
+            <Label prefWidth="80.0" text="發票抬頭">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="InvoiceTitleText" onKeyPressed="#InvoiceTitleKeyPressed" prefHeight="25.0" prefWidth="200.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label prefWidth="80.0" text="統一編號">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TaxIDNumberText" onKeyPressed="#TaxIDNumberKeyPressed" prefHeight="25.0" prefWidth="110.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label prefWidth="80.0" text="發票地址">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="InvoiceAddressText" onKeyPressed="#InvoiceAddressKeyPressed" prefHeight="25.0" prefWidth="400.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <CheckBox fx:id="InvoiceAddress_SameAsCompanyAddress_CheckBox" mnemonicParsing="false" onAction="#InvoiceAddress_SameAsCompanyAddress_OnAction" text="同公司地址">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="InvoiceAddress_SameAsDeliveryAddress_CheckBox" mnemonicParsing="false" onAction="#InvoiceAddress_SameAsDeliveryAddress_OnAction" text="同送貨地址">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #C2F7ED;" GridPane.columnSpan="2" GridPane.rowIndex="6">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <children>
+            <Label prefWidth="80.0" text="貨單稅額">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="OrderTax_ComboBox" prefWidth="120.0" style="-fx-font-size: 15;" />
+            <Label prefWidth="80.0" text="收款折扣">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Spinner fx:id="ReceivableDiscountSpinner" editable="true" prefHeight="23.0" prefWidth="90.0" style="-fx-font-size: 15;" />
+            <Label prefWidth="90.0" text="出單印定價">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="PrintPricing_ComboBox" prefWidth="70.0" style="-fx-font-size: 15;" />
+            <Label prefWidth="80.0" text="出售模式">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="SaleMode_ComboBox" onAction="#SaleModelOnAction" prefWidth="120.0" style="-fx-font-size: 15;" />
+            <Spinner fx:id="SaleDiscountSpinner" prefHeight="23.0" prefWidth="90.0" style="-fx-font-size: 15;" />
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: pink;" GridPane.columnSpan="2" GridPane.rowIndex="7">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <children>
+            <Label prefWidth="80.0" text="收款日期">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="ReceivableDayText" onKeyPressed="#ReceivableDayKeyPressed" onKeyReleased="#ReceivableDayKeyReleased" prefHeight="25.0" prefWidth="70.0" promptText="1 ~ 30">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <Label prefWidth="70.0" text="門市碼">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="StoreCodeText" onKeyPressed="#StoreCodeKeyPressed" prefHeight="25.0" prefWidth="150.0">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2" GridPane.rowIndex="8">
+        <tabs>
+          <Tab fx:id="InsertCustomerTab" style="-fx-pref-width: 130; -fx-font-size: 18;" text="客戶資料新增">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" BorderPane.alignment="CENTER">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <children>
+                              <Button mnemonicParsing="false" onMouseClicked="#InsertCustomerMouseClicked" prefWidth="120.0" text="新增">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0">
+                                       <image>
+                                          <Image url="@../../Image/EstablishLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onMouseClicked="#ClearComponentMouseClicked" prefWidth="120.0" text="清空">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0">
+                                       <image>
+                                          <Image url="@../../Image/RefreshLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </top>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </BorderPane>
+               </content>
+            </Tab>
+          <Tab fx:id="SearchCustomerTab" onSelectionChanged="#SearchCustomerTabOnSelectionChanged" style="-fx-pref-width: 130; -fx-font-size: 18;" text="客戶資料速查">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <TableView fx:id="TableView" onKeyReleased="#TableViewKeyReleased" onMouseClicked="#TableViewMouseClicked" prefHeight="326.0" prefWidth="1400.0" BorderPane.alignment="CENTER">
+                          <columns>
+                            <TableColumn fx:id="CustomerIDColumn" prefWidth="100.0" resizable="false" text="客戶編號" />
+                            <TableColumn fx:id="CustomerNameColumn" prefWidth="280.0" resizable="false" text="客戶名稱" />
+                              <TableColumn fx:id="CustomerNickNameColumn" minWidth="0.0" prefWidth="200.0" resizable="false" text="簡稱" />
+                              <TableColumn fx:id="ContactPersonColumn" minWidth="0.0" resizable="false" text="聯絡人" />
+                              <TableColumn fx:id="Telephone1Column" prefWidth="140.0" resizable="false" text="電話(一)" />
+                              <TableColumn fx:id="Telephone2Column" prefWidth="140.0" resizable="false" text="電話(二)" />
+                              <TableColumn fx:id="FaxColumn" minWidth="0.0" prefWidth="100.0" resizable="false" text="傳真" />
+                              <TableColumn fx:id="CompanyAddressColumn" prefWidth="500.0" resizable="false" text="公司地址" />
+                          </columns>
+                        </TableView>
+                     </center>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                     <top>
+                        <VBox prefHeight="87.0" prefWidth="1300.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="200.0" spacing="30.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <children>
+                                    <Label prefWidth="70.0" text="起始客戶">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="StartCustomerID_ComboBox" onAction="#StartCustomerIDOnAction" onKeyReleased="#StartCustomerIDKeyReleased" onMouseClicked="#StartCustomerIDMouseClicked" onShowing="#StartCustomerIDOnShowing" prefWidth="240.0" style="-fx-font-size: 15;" />
+                                    <Label prefWidth="70.0" text="結束客戶">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ComboBox fx:id="EndCustomerID_ComboBox" onKeyReleased="#EndCustomerIDKeyReleased" onMouseClicked="#EndCustomerIDMouseClicked" onShowing="#EndCustomerIDOnShowing" prefWidth="240.0" style="-fx-font-size: 15;" />
+                                    <Button fx:id="SearchCustomer_Button" mnemonicParsing="false" onMouseClicked="#SearchCustomerIDMouseClicked" prefWidth="120.0" text="送出">
+                                       <font>
+                                          <Font name="System Bold Italic" size="16.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0">
+                                             <image>
+                                                <Image url="@../../Image/SearchLogo.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="PrintCustomer_Button" mnemonicParsing="false" onMouseClicked="#PrintCustomerMouseClicked" prefWidth="120.0" text="列印">
+                                       <font>
+                                          <Font name="System Bold Italic" size="16.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0">
+                                             <image>
+                                                <Image url="@../../Image/PrinterLogo.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="240.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="500.0" spacing="30.0">
+                                       <children>
+                                          <Label prefWidth="70.0" text="客戶名稱">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="SearchCustomerNameText" onKeyPressed="#SearchCustomerNameKeyPressed" prefHeight="25.0" prefWidth="240.0">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font></TextField>
+                                          <Button mnemonicParsing="false" onMouseClicked="#SearchCustomerNameMouseClicked" prefWidth="120.0" text="查詢">
+                                             <font>
+                                                <Font name="System Bold Italic" size="16.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="26.0" fitWidth="26.0">
+                                                   <image>
+                                                      <Image url="@../../Image/SearchLogo.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="500.0" spacing="30.0">
+                                       <children>
+                                          <Button fx:id="ModifyCustomer_Button" disable="true" mnemonicParsing="false" onMouseClicked="#ModifyCustomerMouseClicked" prefWidth="120.0" text="修改">
+                                             <font>
+                                                <Font name="System Bold Italic" size="16.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="26.0" fitWidth="26.0">
+                                                   <image>
+                                                      <Image url="@../../Image/UpdateLogo.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="DeleteCustomer_Button" disable="true" mnemonicParsing="false" onMouseClicked="#DeleteCustomerMouseClicked" prefWidth="120.0" text="刪除">
+                                             <font>
+                                                <Font name="System Bold Italic" size="16.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="26.0" fitWidth="26.0">
+                                                   <image>
+                                                      <Image url="@../../Image/DeleteLogo.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Slider fx:id="DeleteSlider" blockIncrement="0.0" majorTickUnit="1.0" max="1.0" minorTickCount="1" onMouseReleased="#DeleteSliderClickMouseReleased" prefHeight="24.0" prefWidth="204.0" showTickMarks="true" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </top>
+                  </BorderPane>
+               </content>
+            </Tab>
+        </tabs>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" />
+         </padding>
+      </TabPane>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label prefWidth="70.0" text="備註">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="4">
+         <children>
+            <TextArea fx:id="RemarkText" onKeyPressed="#RemarkKeyPressed" prefHeight="146.0" prefWidth="381.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextArea>
+         </children>
+      </HBox>
+   </children>
+</GridPane>

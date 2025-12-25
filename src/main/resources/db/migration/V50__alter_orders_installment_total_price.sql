@@ -1,0 +1,1 @@
+alter table Orders_Installment alter COLUMN total_price int NOT NULL

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="1750.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.Toolkit.ShowProduct.ShowProduct_Controller">
+   <center>
+      <TableView fx:id="TableView" onKeyReleased="#TableViewKeyReleased" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="SelectColumn" prefWidth="40.0" resizable="false" text="選擇" />
+            <TableColumn fx:id="ISBNColumn" prefWidth="120.0" resizable="false" text="ISBN" />
+            <TableColumn fx:id="InternationalCodeColumn" prefWidth="120.0" resizable="false" text="國際碼" />
+            <TableColumn fx:id="FirmCodeColumn" prefWidth="120.0" resizable="false" text="商品碼" />
+            <TableColumn fx:id="ProductNameColumn" prefWidth="450.0" resizable="false" text="品名" />
+            <TableColumn fx:id="UnitColumn" prefWidth="50.0" resizable="false" text="單位" />
+            <TableColumn fx:id="BatchPriceColumn" prefWidth="70.0" text="成本" />
+            <TableColumn fx:id="SinglePriceColumn" prefWidth="70.0" text="單價" />
+            <TableColumn fx:id="PricingColumn" prefWidth="70.0" text="售價" />
+            <TableColumn fx:id="MinimumPriceColumn" prefWidth="100.0" text="對象特別價" />
+            <TableColumn fx:id="VipPrice1Column" prefWidth="70.0" text="Vip1" />
+            <TableColumn fx:id="VipPrice2Column" prefWidth="70.0" text="Vip2" />
+            <TableColumn fx:id="VipPrice3Column" prefWidth="70.0" text="Vip3" />
+            <TableColumn fx:id="InStockColumn" prefWidth="60.0" resizable="false" text="存量" />
+            <TableColumn fx:id="SaleQuantityColumn" prefWidth="60.0" resizable="false" text="銷售量" />
+            <TableColumn fx:id="PurchaseDateColumn" prefWidth="90.0" resizable="false" text="進貨日期" />
+            <TableColumn fx:id="SaleDateColumn" prefWidth="90.0" resizable="false" text="銷售日期" />
+         </columns>
+         <padding>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+         </padding>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="54.0" prefWidth="1260.0" spacing="50.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#GetProductMouseClicked" prefWidth="120.0" text="取得">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/Get.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#CloseMouseClicked" prefWidth="120.0" text="離開">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/Close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

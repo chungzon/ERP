@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="CENTER" hgap="10.0" prefHeight="970.0" prefWidth="1960.0" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.ProductWaitingConfirm.ProductWaitingConfirm.ProductWaitingConfirm_Controller">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1009.0" minWidth="10.0" prefWidth="933.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="998.0" minWidth="10.0" prefWidth="997.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="128.0" minHeight="10.0" prefHeight="17.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="472.0" minHeight="0.0" prefHeight="378.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="548.0" minHeight="10.0" prefHeight="425.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <HBox fx:id="ConditionalSearch_HBox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnSpan="2">
+         <children>
+            <ComboBox fx:id="WaitConfirmStatus_ComboBox" onAction="#WaitConfirmStatusComboBoxOnAction" prefHeight="30.0" prefWidth="90.0" style="-fx-font-size: 15;" />
+            <ComboBox fx:id="WhichTable_ComboBox" prefHeight="30.0" prefWidth="130.0" style="-fx-font-size: 15;" />
+            <ComboBox fx:id="Vendor_ComboBox" onAction="#VendorComboBoxOnAction" prefHeight="30.0" prefWidth="130.0" style="-fx-font-size: 15;" />
+            <ComboBox fx:id="FirstCategory_ComboBox" onAction="#FirstCategoryComboBoxOnAction" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 15;" />
+            <ComboBox fx:id="SecondCategory_ComboBox" onAction="#SecondCategoryComboBoxOnAction" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 15;" />
+            <ComboBox fx:id="ThirdCategory_ComboBox" prefHeight="30.0" prefWidth="180.0" style="-fx-font-size: 15;" />
+            <TextField fx:id="SinglePrice_Minus_BatchPrice_TextField" onKeyReleased="#SinglePrice_Minus_BatchPriceKeyReleased" prefHeight="30.0" prefWidth="130.0" promptText="(單價 - 成本價)">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="ProductName_SearchTextField" onKeyReleased="#ProductNameKeyReleased" prefWidth="180.0" promptText="輸入品名">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Button fx:id="Search_Button" mnemonicParsing="false" onMouseClicked="#SearchMouseClicked" prefHeight="30.0" prefWidth="100.0" text="查詢">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/SearchLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <CheckBox fx:id="BatchPriceIncludeTax_CheckBox" mnemonicParsing="false" onAction="#BatchPriceIncludeTaxCheckBoxOnAction" text="經銷商含稅">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <Label fx:id="waitConfirmTooltip_Label">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/Tooltip.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip fx:id="waitConfirm_tooltip" style="-fx-base: #AE3522; -fx-text-fill: orange; -fx-font: normal bold 24 Langdon;" />
+               </tooltip>
+            </Label>
+         </children>
+      </HBox>
+      <StackPane style="-fx-border-color: black;" GridPane.rowIndex="1">
+         <children>
+            <Label prefWidth="80.0" style="-fx-background-color: F7F7F7; -fx-translate-x: 10; -fx-translate-y: -10;" text="商品資訊" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <GridPane hgap="10.0" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="494.0" minWidth="10.0" prefWidth="413.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="581.0" minWidth="10.0" prefWidth="549.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <StackPane prefHeight="280.0" prefWidth="420.0" GridPane.rowSpan="6">
+                     <children>
+                        <ImageView fx:id="PictureImageView" fitHeight="280.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true" />
+                     </children></StackPane>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="6">
+                     <children>
+                        <Button fx:id="PicturePrevious_Button" disable="true" mnemonicParsing="false" onMouseClicked="#PicturePreviousMouseClicked" prefWidth="100.0" text="上一張">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/Previous.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="PictureNext_Button" disable="true" mnemonicParsing="false" onMouseClicked="#PictureNextMouseClicked" prefWidth="100.0" text="下一張">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/Next.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="DownloadPicture_Button" disable="true" mnemonicParsing="false" onMouseClicked="#DownloadPictureMouseClicked" prefWidth="100.0" text="下載">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/DownloadLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="7">
+                     <children>
+                        <Button fx:id="EditProductDescribe_Button" disable="true" mnemonicParsing="false" onMouseClicked="#EditProductDescribeMouseClicked" text="編輯商品描述">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="EditProductRemark_Button" disable="true" mnemonicParsing="false" onMouseClicked="#EditProductRemarkMouseClicked" text="編輯商品備註">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                        <Hyperlink onMouseClicked="#ProductHyperlinkMouseClicked" text="代理商連結">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label prefWidth="80.0" text="商品名稱">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="ProductNameText" prefWidth="400.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <children>
+                        <Label prefWidth="80.0" text="經銷價">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="BatchPriceText" editable="false" prefWidth="100.0" style="-fx-background-color: bebebe;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label prefWidth="90.0" text="供貨狀態">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="SupplyStatusText" editable="false" prefWidth="170.0" style="-fx-background-color: bebebe;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <Label prefWidth="80.0" text="單價">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="SinglePriceText" prefWidth="100.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="OldSinglePriceText" prefWidth="90.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="SinglePriceNoneTax_Button" mnemonicParsing="false" onMouseClicked="#SinglePriceNoneTaxMouseClicked" prefWidth="150.0" visible="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Label prefWidth="80.0" text="定價">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="PricingText" prefWidth="100.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="OldPricingText" prefWidth="90.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="PricingNoneTax_Button" mnemonicParsing="false" onMouseClicked="#PricingNoneTaxMouseClicked" prefWidth="150.0" visible="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <Label prefWidth="80.0" text="VipPrice1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="VipPrice1Text" prefWidth="100.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="OldVipPrice1Text" prefWidth="90.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="VipPrice1NoneTax_Button" mnemonicParsing="false" onMouseClicked="#VipPrice1NoneTaxMouseClicked" prefWidth="150.0" visible="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <children>
+                        <Label prefWidth="80.0" text="VipPrice2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="VipPrice2Text" prefWidth="100.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="OldVipPrice2Text" prefWidth="90.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="VipPrice2NoneTax_Button" mnemonicParsing="false" onMouseClicked="#VipPrice2NoneTaxMouseClicked" prefWidth="150.0" visible="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <children>
+                        <Label prefWidth="80.0" text="VipPrice3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="VipPrice3Text" prefWidth="100.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="OldVipPrice3Text" prefWidth="90.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="VipPrice3NoneTax_Button" mnemonicParsing="false" onMouseClicked="#VipPrice3NoneTaxMouseClicked" prefWidth="150.0" visible="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <children>
+                        <Label prefWidth="80.0" text="最低利潤">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="LowestProfitText_ProductInfo" editable="false" prefWidth="100.0" style="-fx-background-color: #96E2E5;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="HandleStoreProduct_Button" disable="true" mnemonicParsing="false" onMouseClicked="#HandleStoreProductMouseClicked" prefWidth="160.0" style="-fx-background-color: #C5E1A5;" text="新增至進銷存">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/EstablishLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="SingleProductUpdate_Button" disable="true" mnemonicParsing="false" onMouseClicked="#SingleProductUpdateMouseClicked" prefWidth="120.0" text="單筆更新">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/RefreshLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" top="5.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </StackPane>
+      <StackPane style="-fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <Label prefWidth="80.0" style="-fx-background-color: F7F7F7; -fx-translate-x: 10; -fx-translate-y: -10;" text="比價資訊" StackPane.alignment="TOP_LEFT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="627.0" minWidth="10.0" prefWidth="580.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="445.0" minWidth="10.0" prefWidth="343.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="440.0" minWidth="10.0" prefWidth="61.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TabPane fx:id="TabPane" prefWidth="337.0" tabClosingPolicy="UNAVAILABLE" tabMaxHeight="30.0" tabMaxWidth="180.0" tabMinWidth="85.0" GridPane.columnIndex="1" GridPane.rowSpan="7">
+                     <tabs>
+                        <Tab fx:id="allStoreFilterTab" closable="false" disable="true" onSelectionChanged="#allStoreFilterTabOnSelectionChanged" style="-fx-font-size: 18;" text="所有商品">
+                           <content>
+                              <ScrollPane fx:id="allStoreFilter_ScrollPane" prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                    <VBox fx:id="allStoreFilter_VBox" prefHeight="350.0" prefWidth="320.0" spacing="5.0" />
+                                 </content>
+                              </ScrollPane>
+                           </content></Tab>
+                        <Tab fx:id="StoreFilterTab" closable="false" disable="true" onSelectionChanged="#StoreFilterTabOnSelectionChanged" style="-fx-font-size: 18;" text="商城">
+                           <content>
+                              <ScrollPane fx:id="StoreFilter_ScrollPane" prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                    <VBox fx:id="StoreFilter_VBox" prefHeight="350.0" prefWidth="330.0" spacing="5.0" />
+                                 </content>
+                              </ScrollPane>
+                           </content></Tab>
+                        <Tab fx:id="BidFilterTab" closable="false" disable="true" onSelectionChanged="#BidFilterTabOnSelectionChanged" style="-fx-font-size: 18;" text="拍賣">
+                           <content>
+                              <ScrollPane fx:id="BidFilter_ScrollPane" prefHeight="200.0" prefWidth="200.0">
+                                 <content>
+                                    <VBox fx:id="BidFilter_VBox" prefHeight="350.0" prefWidth="339.0" spacing="5.0" />
+                                 </content>
+                              </ScrollPane>
+                           </content></Tab>
+                     </tabs>
+                     <padding>
+                        <Insets right="5.0" top="5.0" />
+                     </padding>
+                  </TabPane>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                     <children>
+                        <Label prefWidth="80.0" text="最低利潤">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="LowestProfitText_ComparePriceInfo" editable="false" prefWidth="100.0" style="-fx-background-color: bebebe;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <CheckBox fx:id="GreaterThanBatchPrice_CheckBox" mnemonicParsing="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <graphic>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="5.0">
+                                 <children>
+                                    <Label text="大於">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="GreaterThanBatchPrice_TextField" prefWidth="100.0" promptText="預設經銷價">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </TextField>
+                                    <Label text="金額">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                        </CheckBox>
+                        <CheckBox fx:id="SortByLargeToSmall_CheckBox" mnemonicParsing="false" text="大到小排列">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="140.0" text="BigGo商店">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button mnemonicParsing="false" onMouseClicked="#BigGoFilterMouseClicked" prefWidth="150.0" text="商店選擇">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/SettingLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#storePriceMouseClicked" prefWidth="150.0" text="金額設定">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/SettingLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="3">
+                     <children>
+                        <Label prefWidth="140.0" text="商城(拍賣)超連結">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="StoreOrBidHyperlinkText" editable="false" prefWidth="320.0" style="-fx-background-color: bebebe;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Hyperlink onMouseClicked="#StoreOrBidHyperlinkMouseClicked" text="前往">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="4">
+                     <children>
+                        <Label prefWidth="140.0" text="BigGo超連結">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="BigGoHyperlinkText" editable="false" prefWidth="320.0" style="-fx-background-color: bebebe;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Hyperlink fx:id="BigGoHyperlink" onMouseClicked="#BigGoHyperlinkMouseClicked" text="前往">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="5">
+                     <children>
+                        <Label prefWidth="140.0" text="搜尋關鍵字">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="BigGoSearchText" onKeyPressed="#BigGoSearchTextKeyPressed" prefWidth="380.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="6">
+                     <children>
+                        <Button fx:id="BigGoSearch_Button" mnemonicParsing="false" onMouseClicked="#BigGoSearchMouseClicked" prefWidth="120.0" text="搜尋">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/SearchLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="ImportComparePrice_Button" mnemonicParsing="false" onMouseClicked="#ImportComparePriceMouseClicked" prefWidth="150.0" text="匯入比價金額">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/UploadLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Label fx:id="comparePriceTooltip_Label">
+                           <graphic>
+                              <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/Tooltip.gif" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip fx:id="comparePrice_tooltip" style="-fx-base: #AE3522; -fx-text-fill: orange; -fx-font: normal bold 24 Langdon;" />
+                           </tooltip>
+                        </Label>
+                        <ProgressBar fx:id="ProgressBar" prefHeight="31.0" prefWidth="168.0" progress="0.0" visible="false" />
+                     </children>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </HBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="2" GridPane.rowSpan="7">
+                     <children>
+                        <ComboBox fx:id="BigGoPage_ComboBox" minWidth="-Infinity" onAction="#BigGoPageOnAction" style="-fx-font-size: 12;" />
+                        <Button fx:id="BigGoPreviousPage_Button" disable="true" mnemonicParsing="false" onMouseClicked="#BigGoPreviousPageMouseClicked" prefHeight="180.0" text="上&#10;一&#10;頁">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="BigGoNextPage_Button" disable="true" mnemonicParsing="false" onMouseClicked="#BigGoNextPageMouseClicked" prefHeight="180.0" text="下&#10;一&#10;頁">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+      <TableView fx:id="TableView" editable="true" onKeyReleased="#TableViewKeyReleased" onMouseClicked="#TableViewMouseClicked" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+         <columns>
+            <TableColumn fx:id="Vendor_TableColumn" editable="false" prefWidth="100.0" resizable="false" text="廠商" />
+            <TableColumn fx:id="KeyInDate_TableColumn" editable="false" prefWidth="100.0" resizable="false" text="KeyInDate" />
+            <TableColumn fx:id="UpdateDate_TableColumn" editable="false" prefWidth="100.0" resizable="false" text="UpdateDate" />
+            <TableColumn fx:id="ProductCode_TableColumn" editable="false" prefWidth="120.0" resizable="false" text="ProductCode" />
+            <TableColumn fx:id="ISBN_TableColumn" editable="false" prefWidth="130.0" resizable="false" text="ISBN" />
+            <TableColumn fx:id="FirmCode_TableColumn" editable="false" prefWidth="100.0" resizable="false" text="商品碼" />
+            <TableColumn fx:id="ProductName_TableColumn" editable="false" prefWidth="460.0" text="品名" />
+            <TableColumn fx:id="BatchPrice_TableColumn" editable="false" text="經銷價" />
+            <TableColumn fx:id="SinglePrice_TableColumn" editable="false" text="單價" />
+            <TableColumn fx:id="Pricing_TableColumn" editable="false" text="定價" />
+            <TableColumn fx:id="VipPrice1_TableColumn" editable="false" text="VipPrice1" />
+            <TableColumn fx:id="VipPrice2_TableColumn" editable="false" text="VipPrice2" />
+            <TableColumn fx:id="VipPrice3_TableColumn" editable="false" text="VipPrice3" />
+            <TableColumn fx:id="NewFirstCategory_TableColumn" prefWidth="50.0" resizable="false" text="總類" />
+            <TableColumn fx:id="SupplyStatus_TableColumn" editable="false" prefWidth="120.0" sortable="false" text="供貨狀態" />
+            <TableColumn fx:id="StatusButton_TableColumn" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="狀態" />
+            <TableColumn fx:id="DeleteButton_TableColumn" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="刪除" />
+            <TableColumn fx:id="IgnoreButton_TableColumn" editable="false" prefWidth="75.0" resizable="false" sortable="false" text="忽略" />
+         </columns>
+      </TableView>
+      <ProgressIndicator fx:id="ProgressIndicator" visible="false" GridPane.rowIndex="1" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+   </padding>
+</GridPane>

@@ -1,0 +1,1 @@
+ALTER TABLE [dbo].[IAECrawlerAccount_Payment] ADD FOREIGN KEY ([Belong_id]) REFERENCES [dbo].[IAECrawlerBelong] ([id]) ON DELETE NO ACTION ON UPDATE NO ACTION

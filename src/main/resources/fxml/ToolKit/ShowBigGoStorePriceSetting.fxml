@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.Toolkit.ShowBigGoPriceSetting.ShowBigGoPriceSetting_Controller">
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="77.0" prefWidth="700.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#saveMouseClicked" prefWidth="120.0" text="儲存">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/UpdateLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onMouseClicked="#closeMouseClicked" prefWidth="120.0" text="離開">
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/Close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="544.0" minWidth="10.0" prefWidth="127.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="674.0" minWidth="0.0" prefWidth="653.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="廠商">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="單價">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <RadioButton fx:id="singlePrice_maxPrice_radioButton" mnemonicParsing="false" onAction="#singleMaxPriceOnAction" text="最大值(商城)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="singlePrice_toggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="singlePrice_minPrice_radioButton" mnemonicParsing="false" onAction="#singleMinPriceOnAction" text="最小值(商城)" toggleGroup="$singlePrice_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="singlePrice_averagePrice_radioButton" mnemonicParsing="false" onAction="#singleAveragePriceOnAction" text="(大+小)/2" toggleGroup="$singlePrice_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <RadioButton fx:id="singlePrice_percentagePrice_radioButton" mnemonicParsing="false" onAction="#singlePercentagePriceOnAction" text="成本*" toggleGroup="$singlePrice_toggleGroup">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </RadioButton>
+                        <Spinner fx:id="singlePrice_percentagePrice_spinner" disable="true" editable="true" prefWidth="90.0" style="-fx-font-size: 16;" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <Label text="定價">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <RadioButton fx:id="pricing_maxPrice_radioButton" mnemonicParsing="false" onAction="#pricingMaxPriceOnAction" text="最大值(商城)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="pricing_toggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="pricing_minPrice_radioButton" mnemonicParsing="false" onAction="#pricingMinPriceOnAction" text="最小值(商城)" toggleGroup="$pricing_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="pricing_averagePrice_radioButton" mnemonicParsing="false" onAction="#pricingAveragePriceOnAction" text="(大+小)/2" toggleGroup="$pricing_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <RadioButton fx:id="pricing_percentagePrice_radioButton" mnemonicParsing="false" onAction="#pricingPercentagePriceOnAction" text="成本*" toggleGroup="$pricing_toggleGroup">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </RadioButton>
+                        <Spinner fx:id="pricing_percentagePrice_spinner" disable="true" editable="true" prefWidth="90.0" style="-fx-font-size: 16;" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox fx:id="blackCatShippingFee_HBox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="manufacturerCode_textField" onKeyPressed="#manufacturerCodeKeyPressed" prefHeight="34.0" prefWidth="100.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="manufacturerName_textField" onKeyPressed="#manufacturerNameKeyPressed" prefHeight="34.0" prefWidth="380.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextField>
+                  <Button mnemonicParsing="false" onMouseClicked="#clearManufacturerMouseClicked" prefWidth="100.0" text="清空">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/TrashCan.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <RadioButton fx:id="vipPrice1_maxPrice_radioButton" mnemonicParsing="false" onAction="#vipPrice1MaxPriceOnAction" text="最大值(拍賣)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="vipPrice1_toggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="vipPrice1_minPrice_radioButton" mnemonicParsing="false" onAction="#vipPrice1MinPriceOnAction" text="最小值(拍賣)" toggleGroup="$vipPrice1_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="vipPrice1_averagePrice_radioButton" mnemonicParsing="false" onAction="#vipPrice1AveragePriceOnAction" text="(大+小)/2" toggleGroup="$vipPrice1_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <RadioButton fx:id="vipPrice1_percentagePrice_radioButton" mnemonicParsing="false" onAction="#vipPrice1PercentagePriceOnAction" text="成本*" toggleGroup="$vipPrice1_toggleGroup">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </RadioButton>
+                        <Spinner fx:id="vipPrice1_percentagePrice_spinner" disable="true" editable="true" prefWidth="90.0" style="-fx-font-size: 16;" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+               <children>
+                  <Label text="VipPrice1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+               <children>
+                  <Label text="VipPrice2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <RadioButton fx:id="vipPrice2_maxPrice_radioButton" mnemonicParsing="false" onAction="#vipPrice2MaxPriceOnAction" text="最大值(拍賣)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="vipPrice2_toggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="vipPrice2_minPrice_radioButton" mnemonicParsing="false" onAction="#vipPrice2MinPriceOnAction" text="最小值(拍賣)" toggleGroup="$vipPrice2_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="vipPrice2_averagePrice_radioButton" mnemonicParsing="false" onAction="#vipPrice2AveragePriceOnAction" text="(大+小)/2" toggleGroup="$vipPrice2_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <RadioButton fx:id="vipPrice2_percentagePrice_radioButton" mnemonicParsing="false" onAction="#vipPrice2PercentagePriceOnAction" text="成本*" toggleGroup="$vipPrice2_toggleGroup">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </RadioButton>
+                        <Spinner fx:id="vipPrice2_percentagePrice_spinner" disable="true" editable="true" prefWidth="90.0" style="-fx-font-size: 16;" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+               <children>
+                  <Label text="VipPrice3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <children>
+                  <RadioButton fx:id="vipPrice3_maxPrice_radioButton" mnemonicParsing="false" onAction="#vipPrice3MaxPriceOnAction" text="最大值(拍賣)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="vipPrice3_toggleGroup" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="vipPrice3_minPrice_radioButton" mnemonicParsing="false" onAction="#vipPrice3MinPriceOnAction" text="最小值(拍賣)" toggleGroup="$vipPrice3_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="vipPrice3_averagePrice_radioButton" mnemonicParsing="false" onAction="#vipPrice3AveragePriceOnAction" text="(大+小)/2" toggleGroup="$vipPrice3_toggleGroup">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </RadioButton>
+                  <HBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <RadioButton fx:id="vipPrice3_percentagePrice_radioButton" mnemonicParsing="false" onAction="#vipPrice3PercentagePriceOnAction" text="成本*" toggleGroup="$vipPrice3_toggleGroup">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </RadioButton>
+                        <Spinner fx:id="vipPrice3_percentagePrice_spinner" disable="true" editable="true" prefWidth="90.0" style="-fx-font-size: 16;" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+               <children>
+                  <Label text="稅額狀態">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="taxStatus_HBox" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <Label text="【當前金額÷1.05】">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="【匯入當前金額(含稅)】">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </center>
+</BorderPane>

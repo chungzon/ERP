@@ -1,0 +1,19 @@
+Printer_Name:ZDesigner GT800 (ZPL) CLOUD
+First_Product_Name_Position_X:150
+First_Product_Name_Position_Y:20
+First_Product_Name_Sub_Position_Y:40
+Purchase_Position_X:290
+Purchase_Position_Y:60
+First_Factory_Number_Position_X:150
+First_Factory_Number_Position_Y:100
+Barcode_Position_X:250
+Barcode_Position_Y:95
+Second_Factory_Number_Position_X:150
+Second_Factory_Number_Position_Y:135
+Second_Product_Name_Position_X:150
+Second_Product_Name_Position_Y:165
+Company_Name_Position_X:150
+Company_Name_Position_Y:185
+Export_Position_X:290
+Warranty_Date_Position_X:150
+Warranty_Date_Position_Y:210

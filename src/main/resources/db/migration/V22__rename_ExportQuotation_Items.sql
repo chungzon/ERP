@@ -1,0 +1,1 @@
+EXEC sp_rename 'dbo.Orders_ExportQuotationItem', 'ExportQuotation_Item'

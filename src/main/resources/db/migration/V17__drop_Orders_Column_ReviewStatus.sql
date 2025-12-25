@@ -1,0 +1,6 @@
+DECLARE @ConstraintName nvarchar(200) 
+SELECT @ConstraintName = Name FROM SYS.DEFAULT_CONSTRAINTS WHERE PARENT_OBJECT_ID = OBJECT_ID('Orders') 
+AND PARENT_COLUMN_ID = ( SELECT column_id FROM sys.columns WHERE NAME = N'ReviewStatus' AND object_id = OBJECT_ID(N'Orders')) 
+IF @ConstraintName IS NOT NULL EXEC ( 'ALTER TABLE Orders DROP CONSTRAINT ' + @ConstraintName ) 
+IF EXISTS (SELECT * FROM syscolumns WHERE id=object_id('Orders') AND name='ReviewStatus') 
+EXEC('ALTER TABLE Orders DROP COLUMN ReviewStatus')

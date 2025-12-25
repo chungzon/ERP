@@ -1,0 +1,1 @@
+ALTER TABLE IpCamera ADD default_preview bit not null default ((0))

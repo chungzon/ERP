@@ -1,0 +1,2 @@
+exec sp_rename 'Orders_ProductGroup_Price.total_Price_none_tax','total_price_none_tax'
+exec sp_rename 'Orders_ProductGroup_Price.total_Price_include_tax','total_price_include_tax'

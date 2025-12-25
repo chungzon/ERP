@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="950.0" prefWidth="1800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.Toolkit.ShowProductGroup.ShowProductGroup_Controller">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="601.0" minHeight="10.0" prefHeight="445.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="601.0" minHeight="0.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="623.0" minHeight="10.0" prefHeight="470.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <GridPane prefHeight="417.0" prefWidth="1230.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="371.0" minHeight="10.0" prefHeight="336.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TableView fx:id="MainTableView" editable="true" onKeyReleased="#TableViewKeyReleased" prefHeight="280.0" prefWidth="864.0">
+               <columns>
+                  <TableColumn fx:id="SelectColumn" prefWidth="40.0" resizable="false" sortable="false">
+                     <graphic>
+                        <CheckBox fx:id="SelectAll_CheckBox" mnemonicParsing="false" onAction="#SelectAllOnAction">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </CheckBox>
+                     </graphic></TableColumn>
+                  <TableColumn fx:id="ItemNumberColumn" prefWidth="45.0" resizable="false" sortable="false" text="項號" />
+                  <TableColumn fx:id="ISBNColumn" prefWidth="140.0" resizable="false" sortable="false" text="主碼" />
+                  <TableColumn fx:id="ProductNameColumn" prefWidth="500.0" resizable="false" sortable="false" text="品名" />
+                  <TableColumn fx:id="QuantityColumn" resizable="false" sortable="false" text="數量" />
+                  <TableColumn fx:id="UnitColumn" prefWidth="50.0" resizable="false" sortable="false" text="單位" />
+                  <TableColumn fx:id="BatchPricePriceColumn" resizable="false" sortable="false" text="成本" />
+                  <TableColumn fx:id="PricingColumn" resizable="false" sortable="false" text="定價" />
+                  <TableColumn fx:id="PriceAmountColumn" resizable="false" sortable="false" text="金額" />
+                  <TableColumn fx:id="InStockColumn" prefWidth="50.0" resizable="false" sortable="false" text="存量" />
+                  <TableColumn fx:id="SafetyStockColumn" resizable="false" sortable="false" text="安全存量" />
+               </columns>
+            </TableView>
+            <GridPane prefHeight="174.0" prefWidth="1230.0" GridPane.rowIndex="1">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="975.0" minWidth="10.0" prefWidth="478.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1552.0" minWidth="0.0" prefWidth="526.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1552.0" minWidth="10.0" prefWidth="800.0" />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnSpan="4">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <Label text="名稱">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="insertProductGroup_NameText" onKeyPressed="#InsertProductGroupNameKeyPressed" prefWidth="500.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="單位">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="insertProductGroup_UnitText" onKeyPressed="#InsertProductGroupUnitKeyPressed" prefWidth="60.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox fx:id="insertProductGroup_HBox" alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <Label fx:id="insertProductGroupSwitch_Label" prefWidth="60.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="數量">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="insertProductGroup_QuantityText" onKeyPressed="#InsertProductGroupQuantityKeyPressed" onKeyReleased="#InsertProductGroupQuantityKeyReleased" prefWidth="75.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="單價">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="insertProductGroup_SinglePriceText" onKeyPressed="#InsertProductGroupSinglePriceKeyPressed" onKeyReleased="#InsertProductGroupSinglePriceKeyReleased" prefWidth="100.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="總金額">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="insertProductGroup_TotalPriceText" editable="false" prefWidth="100.0" style="-fx-background-color: #BEBEBE;">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="140.0" />
+                     </GridPane.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="1">
+                     <children>
+                        <Button fx:id="importProduct_Button" disable="true" mnemonicParsing="false" onMouseClicked="#ImportProductMouseClicked" prefWidth="140.0" text="匯入↓">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/UploadLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="AutoGroup_Button" mnemonicParsing="false" onMouseClicked="#AutoGroupMouseClicked" prefWidth="200.0" text="自動編群(剩餘商品)">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/Get.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="細項數量">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="insertProductGroup_smallQuantitySpinner" editable="true" onKeyReleased="#InsertProductGroupSmallQuantityKeyReleased" onMouseClicked="#InsertProductGroupSmallQuantityMouseClicked" prefWidth="80.0" style="-fx-font-size: 16;" />
+                        <Label text="       ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="insertProductGroup_SmallSinglePriceText" onKeyPressed="#InsertProductGroupSmallSinglePriceKeyPressed" onKeyReleased="#InsertProductGroupSmallSinglePriceKeyReleased" prefWidth="100.0" promptText="細項單價">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label text="            ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="insertProductGroup_SmallTotalPriceText" editable="false" prefWidth="100.0" promptText="細項總金額" style="-fx-background-color: #bebebe;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <HBox alignment="CENTER" prefHeight="200.0" prefWidth="180.0">
+                           <children>
+                              <Button fx:id="insertGroup_Button" disable="true" mnemonicParsing="false" onKeyPressed="#InsertGroupKeyPressed" onMouseClicked="#InsertGroupMouseClicked" prefWidth="140.0" text="新增群組">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/EstablishLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+      </GridPane>
+      <Label text="-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" textFill="#0051ff" GridPane.rowIndex="1">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <GridPane GridPane.rowIndex="2">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="328.0" minHeight="10.0" prefHeight="115.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="361.0" minHeight="10.0" prefHeight="323.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="176.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.0" minWidth="10.0" prefWidth="478.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="962.0" minWidth="10.0" prefWidth="526.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="959.0" minWidth="10.0" prefWidth="798.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnSpan="3">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <Spinner fx:id="groupIndexSpinner" editable="true" onKeyReleased="#GroupIndexKeyReleased" onMouseClicked="#GroupIndexMouseClicked" prefWidth="80.0" style="-fx-font-size: 16;" />
+                              <Label text="名稱">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="modifyProductGroup_NameText" editable="false" onKeyPressed="#ModifyProductGroupNameKeyPressed" onKeyReleased="#ModifyProductGroupNameKeyReleased" prefWidth="500.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="單位">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="modifyProductGroup_UnitText" editable="false" onKeyPressed="#ModifyProductGroupUnitKeyPressed" onKeyReleased="#ModifyProductGroupUnitKeyReleased" prefWidth="60.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="modifyProductGroup_HBox" alignment="CENTER_LEFT" spacing="20.0">
+                           <children>
+                              <Label fx:id="modifyProductGroupSwitch_Label" prefWidth="60.0">
+                                 <font>
+                                    <Font name="System Bold Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="數量">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="modifyProductGroup_QuantityText" editable="false" onKeyPressed="#ModifyProductGroupQuantityKeyPressed" onKeyReleased="#ModifyProductGroupQuantityKeyReleased" prefWidth="75.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="單價">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="modifyProductGroup_SinglePriceText" editable="false" onKeyPressed="#ModifyProductGroupSinglePriceKeyPressed" onKeyReleased="#ModifyProductGroupSinglePriceKeyReleased" prefWidth="100.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label fx:id="singlePrice_originDifferentLabel" prefWidth="80.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="總金額">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="modifyProductGroup_TotalPriceText" editable="false" prefWidth="100.0" style="-fx-background-color: #BEBEBE;">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label fx:id="totalPrice_originDifferentLabel" prefWidth="80.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="60.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.rowIndex="1">
+                     <children>
+                        <Button fx:id="deleteProduct_Button" disable="true" mnemonicParsing="false" onMouseClicked="#DeleteProductMouseClicked" prefWidth="140.0" text="刪除↑">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/DeleteLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="modifyGroup_Button" disable="true" mnemonicParsing="false" onKeyPressed="#ModifyGroupKeyPressed" onMouseClicked="#ModifyGroupMouseClicked" prefWidth="140.0" text="修改群組">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/UpdateLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="deleteGroup_Button" disable="true" mnemonicParsing="false" onKeyPressed="#DeleteGroupKeyPressed" onMouseClicked="#DeleteGroupMouseClicked" prefWidth="140.0" text="刪除群組">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Image/DeleteLogo.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <children>
+                        <Label text="細項數量">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Spinner fx:id="modifyProductGroup_smallQuantitySpinner" editable="true" onKeyReleased="#ModifyProductGroupSmallQuantityKeyReleased" onMouseClicked="#ModifyProductGroupSmallQuantityMouseClicked" prefWidth="80.0" style="-fx-font-size: 16;" />
+                        <Label text="       ">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="modifyProductGroup_SmallSinglePriceText" onKeyPressed="#ModifyProductGroupSmallSinglePriceKeyPressed" onKeyReleased="#ModifyProductGroupSmallSinglePriceKeyReleased" prefWidth="100.0" promptText="細項單價">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="singlePrice_smallDifferentLabel" prefWidth="90.0" text="-111120.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefWidth="45.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="modifyProductGroup_SmallTotalPriceText" editable="false" prefWidth="100.0" promptText="細項總金額" style="-fx-background-color: #bebebe;">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="totalPrice_smallDifferentLabel" prefWidth="90.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+            <TabPane fx:id="TabPane" prefHeight="308.0" prefWidth="1230.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="1" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="establishOrderProductGroup_Button" mnemonicParsing="false" onMouseClicked="#EstablishOrderProductGroupMouseClicked" prefWidth="140.0" text="建立">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/EstablishLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="modifyOrderProductGroup_Button" disable="true" mnemonicParsing="false" onMouseClicked="#ModifyOrderProductGroupMouseClicked" prefWidth="140.0" text="修改">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/UpdateLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#CloseMouseClicked" prefWidth="140.0" text="關閉">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Image/DeleteLogo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </HBox>
+         </children>
+         <GridPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </GridPane.margin>
+      </GridPane>
+   </children>
+</GridPane>

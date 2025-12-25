@@ -1,0 +1,1 @@
+ALTER TABLE [dbo].[ProductGroup] ADD SmallQuantity int NULL DEFAULT NULL

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.Toolkit.ShowBigGoFilter.ShowBigGoFilter_Controller">
+   <padding>
+      <Insets top="20.0" />
+   </padding>
+   <center>
+      <TabPane prefHeight="569.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="allStore_Tab" onSelectionChanged="#allStoreTabSelectChanged" style="-fx-font-size: 16;" text="未分類商店">
+               <content>
+                  <GridPane prefHeight="526.0" prefWidth="580.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="447.0" minHeight="10.0" prefHeight="438.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TableView fx:id="allStore_tableView" editable="true" onKeyReleased="#allStoreTableViewKeyReleased" prefHeight="434.0" prefWidth="580.0" GridPane.rowIndex="1">
+                          <columns>
+                              <TableColumn fx:id="allStore_itemNumber_tableColumn" prefWidth="50.0" resizable="false" sortable="false" text="項號" />
+                            <TableColumn fx:id="allStore_select_tableColumn" prefWidth="50.0" resizable="false" sortable="false" text="選擇" />
+                            <TableColumn fx:id="allStore_storeName_tableColumn" prefWidth="180.0" resizable="false" sortable="false" text="商店名稱" />
+                              <TableColumn fx:id="allStore_linkName_tableColumn" prefWidth="290.0" resizable="false" sortable="false" text="連結" />
+                          </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Button mnemonicParsing="false" onMouseClicked="#allStore_addStore_mouseClicked" prefWidth="140.0" text="商城">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/AddLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onMouseClicked="#updateOnlineStore_mouseClicked" prefWidth="140.0" text="商店更新">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/RefreshLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+          <Tab fx:id="store_Tab" onSelectionChanged="#storeTabSelectChanged" style="-fx-font-size: 16;" text="商城(單價、定價)">
+               <content>
+                  <GridPane prefHeight="526.0" prefWidth="580.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="447.0" minHeight="10.0" prefHeight="438.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TableView fx:id="store_tableView" editable="true" onKeyReleased="#storeTableViewKeyReleased" prefHeight="434.0" prefWidth="580.0" GridPane.rowIndex="1">
+                           <columns>
+                              <TableColumn fx:id="store_itemNumber_tableColumn" prefWidth="50.0" resizable="false" sortable="false" text="項號" />
+                              <TableColumn fx:id="store_select_tableColumn" prefWidth="50.0" resizable="false" sortable="false" text="選擇" />
+                              <TableColumn fx:id="store_storeName_tableColumn" prefWidth="180.0" resizable="false" sortable="false" text="商城名稱" />
+                              <TableColumn fx:id="store_linkName_tableColumn" prefWidth="290.0" resizable="false" sortable="false" text="連結" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Button mnemonicParsing="false" onMouseClicked="#store_removeStore_mouseClicked" prefWidth="140.0" text="移除">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/TrashCan.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab fx:id="bid_Tab" onSelectionChanged="#bidTabSelectChanged" style="-fx-font-size: 16;" text="拍賣(VipPrice1~3)">
+               <content>
+                  <GridPane prefHeight="526.0" prefWidth="580.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="212.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="447.0" minHeight="10.0" prefHeight="411.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <TableView fx:id="bid_tableView" editable="true" onKeyReleased="#bidTableViewKeyReleased" prefHeight="434.0" prefWidth="580.0" GridPane.rowIndex="2">
+                           <columns>
+                              <TableColumn fx:id="bid_itemNumber_tableColumn" prefWidth="50.0" resizable="false" sortable="false" text="項號" />
+                              <TableColumn fx:id="bid_select_tableColumn" prefWidth="50.0" resizable="false" sortable="false" text="選擇" />
+                              <TableColumn fx:id="bid_storeName_tableColumn" onEditCommit="#bid_storeName_editCommit" prefWidth="180.0" resizable="false" sortable="false" text="拍賣名稱" />
+                              <TableColumn fx:id="bid_linkName_tableColumn" onEditCommit="#bid_linkName_editCommit" prefWidth="290.0" resizable="false" sortable="false" text="連結" />
+                           </columns>
+                        </TableView>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label text="拍賣名稱">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="bid_storeName_textField" prefHeight="34.0" prefWidth="120.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                              <Label text="連結">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="bid_linkName_textField" prefHeight="34.0" prefWidth="160.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="60.0" prefWidth="580.0" spacing="20.0" GridPane.rowIndex="1">
+                           <children>
+                              <Button mnemonicParsing="false" onMouseClicked="#bid_addBid_mouseClicked" prefWidth="140.0" text="新增">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/UpdateLogo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button mnemonicParsing="false" onMouseClicked="#bid_removeBid_MouseClicked" prefWidth="140.0" text="移除">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Image/TrashCan.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+        </tabs>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </TabPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="64.0" prefWidth="600.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onMouseClicked="#close_mouseClicked" prefWidth="120.0" text="離開">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Image/Close.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

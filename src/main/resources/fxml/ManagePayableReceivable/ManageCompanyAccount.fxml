@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="970.0" prefWidth="1920.0" style="-fx-background-color: #CBCBCB;" vgap="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ERP.Controller.ManagePayableReceivable.ManageCompanyAccount.ManageCompanyAccount_Controller">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="142.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="142.0" minHeight="0.0" prefHeight="60.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="191.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="371.0" minHeight="0.0" prefHeight="142.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="801.0" minHeight="10.0" prefHeight="650.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0" spacing="20.0">
+         <children>
+            <Label prefWidth="80.0" text="帳戶簡稱">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="AccountNickNameText" prefHeight="25.0" prefWidth="190.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="1">
+         <children>
+            <Label prefWidth="80.0" text="銀行">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="AllBank_ComboBox" prefWidth="190.0" style="-fx-font-size: 15;" />
+            <Label prefWidth="50.0" text="分行">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="BankBranchText" prefHeight="25.0" prefWidth="200.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="350.0" spacing="20.0" GridPane.rowIndex="2">
+         <children>
+            <Label prefWidth="80.0" text="銀行帳號">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="BankAccountText" prefHeight="25.0" prefWidth="190.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Label prefWidth="50.0" text="戶名">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="BankAccountNameText" prefHeight="25.0" prefWidth="200.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="3">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <children>
+            <Label prefWidth="80.0" text="備註">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="RemarkText" prefHeight="100.0" prefWidth="480.0" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextArea>
+         </children>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+         <children>
+            <TabPane prefWidth="1920.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab fx:id="InsertAccountTab" style="-fx-pref-width: 130; -fx-font-size: 18;" text="公司帳戶新增">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <top>
+                              <HBox alignment="CENTER" prefHeight="60.0" prefWidth="1900.0" spacing="50.0" BorderPane.alignment="CENTER">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <children>
+                                    <Button mnemonicParsing="false" onMouseClicked="#insertAccountMouseClicked" prefWidth="120.0" text="新增">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Image/EstablishLogo.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onMouseClicked="#ClearComponentMouseClicked" prefWidth="120.0" text="清空">
+                                       <font>
+                                          <Font name="System Bold Italic" size="18.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Image/RefreshLogo.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                           </top>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </BorderPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="SearchAccountTab" onSelectionChanged="#searchAccountTabOnSelectionChanged" style="-fx-pref-width: 130; -fx-font-size: 18;" text="公司帳戶查詢">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <TableView fx:id="TableView" onMouseClicked="#TableViewMouseClicked" prefHeight="326.0" prefWidth="1400.0" BorderPane.alignment="CENTER">
+                                 <columns>
+                                    <TableColumn fx:id="BankCodeColumn" editable="false" resizable="false" sortable="false" text="銀行代碼" />
+                                    <TableColumn fx:id="BankNameColumn" editable="false" prefWidth="200.0" resizable="false" sortable="false" text="銀行名稱" />
+                                    <TableColumn fx:id="BankBranchColumn" editable="false" minWidth="0.0" prefWidth="200.0" resizable="false" sortable="false" text="分行" />
+                                    <TableColumn fx:id="BankAccountColumn" editable="false" minWidth="0.0" prefWidth="200.0" resizable="false" sortable="false" text="銀行帳號" />
+                                    <TableColumn fx:id="BankAccountNameColumn" editable="false" prefWidth="150.0" resizable="false" sortable="false" text="戶名" />
+                                    <TableColumn fx:id="RemarkColumn" editable="false" prefWidth="400.0" resizable="false" sortable="false" text="備註" />
+                                 </columns>
+                              </TableView>
+                           </center>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <top>
+                              <HBox alignment="CENTER" prefHeight="60.0" prefWidth="1900.0" spacing="50.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Button fx:id="ModifyAccount_Button" disable="true" mnemonicParsing="false" onMouseClicked="#modifyAccountMouseClicked" prefWidth="120.0" text="修改">
+                                       <font>
+                                          <Font name="System Bold Italic" size="16.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Image/UpdateLogo.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="DeleteAccount_Button" disable="true" mnemonicParsing="false" onMouseClicked="#deleteAccountMouseClicked" prefWidth="120.0" text="刪除">
+                                       <font>
+                                          <Font name="System Bold Italic" size="16.0" />
+                                       </font>
+                                       <graphic>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../Image/DeleteLogo.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Slider fx:id="DeleteSlider" blockIncrement="0.0" majorTickUnit="1.0" max="1.0" minorTickCount="1" onMouseReleased="#deleteSliderMouseReleased" prefHeight="24.0" prefWidth="204.0" showTickMarks="true" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                           </top>
+                        </BorderPane>
+                     </content>
+                  </Tab>
+               </tabs>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" />
+               </padding>
+            </TabPane>
+         </children>
+      </HBox>
+   </children>
+</GridPane>
